@@ -1,0 +1,12 @@
+{
+  "name": "Brief_8_-_Trime_App",
+  "displayName": "Brief_8_-_Trime_App",
+  "expo": {
+    "name": "Brief_8_-_Trime_App",
+    "slug": "Brief_8_-_Trime_App",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
