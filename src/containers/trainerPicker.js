@@ -2,10 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+export default function trainerPicker() {
   return (
     <View style={styles.container}>
-      <Text>Adding remote team repository</Text>
+      <Text>This is the trainerPicker screen</Text>
       <StatusBar style="auto" />
     </View>
   );
