@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function trainerPicker() {
+export default function trainerPicker({navigation}) {
   return (
     <View style={styles.container}>
       <Text>This is the trainerPicker screen</Text>
