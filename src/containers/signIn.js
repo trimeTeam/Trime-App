@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function signIn({navigation}) {
   return (
     <View style={styles.container}>
-      <Text>This is the sign in screen</Text>
+      <Text>Testing Expo and branch</Text>
       <StatusBar style="auto" />
     </View>
   );
