@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Button, StyleSheet, Text, View, Image } from 'react-native';
+import { Button, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
 export default function trainerTrainee(props) {
   
@@ -12,7 +12,9 @@ export default function trainerTrainee(props) {
       <Text style={styles.header}>Welcome!</Text>
       <Text style={styles.introText}>Book your first Personal Training{'\n'} session now.</Text>
       <Image source={require('../../assets/trainerTrainee.png')} style={styles.imageStyle}></Image>
-      <Button title="Get started" color='black' onPress={props.getStartedBtn}/>
+      <TouchableOpacity style={styles.button} onPress={props.getStartedBtn}>
+        <Text style={styles.buttonText}>Get started!</Text>
+      </TouchableOpacity>
       <Text style={styles.bottomLinks}>Want to become a trainer? <Text style={styles.signInUp}>Sign up here</Text></Text>
       <Text style={styles.bottomLinks}>Already have an account? <Text style={styles.signInUp}>Sign in</Text></Text>
     </View>
@@ -36,6 +38,17 @@ const styles = StyleSheet.create({
   introText: {
     fontSize: 18,
     marginBottom: 20
+  },
+  button: {
+    width: 330,
+    height: 50,
+    backgroundColor: 'black',
+    borderRadius: 50,
+    justifyContent: 'center'
+  },
+  buttonText: {
+    fontSize: 18,
+    color: 'white'
   },
   imageStyle: {
     width: 300,
