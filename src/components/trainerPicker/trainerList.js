@@ -7,11 +7,11 @@ import { FlatList } from 'react-native-gesture-handler';
 import TrainerListItem from './trainerListItem'
 
 
-export default function TrainerList() {
+export default function TrainerList(props) {
     return (
         <View style={styles.container}>
         <StatusBar style="auto" />
-        <FlatList data={trainers} renderItem={({item, index}) => (<TrainerListItem trainer={item}/>)}/>
+        <FlatList data={trainers} renderItem={({item, index}) => (<TrainerListItem trainer={item} displayTrainerPopup={props.displayTrainerPopup}/>)}/>
         </View>
     );
 }

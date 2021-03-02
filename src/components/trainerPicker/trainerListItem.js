@@ -4,9 +4,11 @@ import { StyleSheet, View, Text, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
-export default function TrainerListItem(props) {
+export default function ReviewListItem(props) {
+ 
+
     return (
-        <View style={styles.container}>
+        <View style={styles.container} onClick={() => {props.displayTrainerPopup(props.trainer)}}>
         <StatusBar style="auto" />
         <Image style={styles.profileImg} source={{uri: props.trainer.profileImg}}/>
         <View style={styles.textContainer}>
@@ -22,7 +24,7 @@ export default function TrainerListItem(props) {
             </View>
             <Text><Icon name='timer' size={25}/>{props.trainer.durationFrom} - {props.trainer.durationTo} min</Text>
             <View style={styles.detailsContainer}>
-                <Text><Icon name='location-on' size={25}/>{props.trainer.location}</Text>
+                <Text><Icon name={props.trainer.location == 'Remote'? 'mobile-screen-share':'location-on'} size={25}/>{props.trainer.location}</Text>
                 <Text style={styles.pricePill}>From <Text style={styles.bold}>{props.trainer.costFrom} SEK</Text></Text>
             </View>
         </View>

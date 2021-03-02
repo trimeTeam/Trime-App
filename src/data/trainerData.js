@@ -12,15 +12,33 @@ const trainers = [
         durationTo: "60",
         costFrom: "50",
         costTo: "100",
-        location: "Online / Gym",
+        location: "Stockholm",
         address: "Brunnsgatan 5, 111 38 Stockholm, Sweden",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         weekdaysAvailable: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         typeOfTraining: [{name: "HIIT", icon: HiitIcon}, {name: "Running", icon: RunningIcon}, {name: "Gym", icon: GymIcon}, {name: "Boxing", icon: BoxingIcon}],
-        review: {
-            user: "Name Namesson",
-            reviewText: "This PT gave me a good workout, I will definetly come back!"
-        }
+        numberOfReviews: '99+',
+        overallRating: 4.4,
+        reviews: [
+            {
+                date: "2020-03-02",
+                user: "Benjamin Franklin",
+                review: "5",
+                reviewText: "This PT gave me a good workout, I will definetly come back!"
+            },
+            {
+                date: "2020-02-29",
+                user: "Thomas Trump",
+                review: "4",
+                reviewText: "Haven't been able to walk for a week, this PT gave me a real leg day."
+            },
+            {
+                date: "2020-02-21",
+                user: "Frank the Tank",
+                review: "5",
+                reviewText: "I will definetly come back, it was a great workout."
+            }
+        ]
     },
     {
         key: "2",
@@ -30,15 +48,33 @@ const trainers = [
         durationTo: "90",
         costFrom: "80",
         costTo: "120",
-        location: "Online / Gym",
+        location: "Remote",
         address: "Brunnsgatan 5, 111 38 Stockholm, Sweden",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         weekdaysAvailable: ["Monday", "Wednesday", "Thursday", "Friday", "Saturday"],
         typeOfTraining: [{name: "HIIT", icon: HiitIcon}, {name: "Running", icon: RunningIcon}, {name: "Gym", icon: GymIcon}, {name: "Boxing", icon: BoxingIcon}],
-        review: {
-            user: "Name Namesson",
-            reviewText: "This PT gave me a good workout, I will definetly come back!"
-        }
+        numberOfReviews: '76',
+        overallRating: 5.0,
+        reviews: [
+            {
+                date: "2020-03-02",
+                user: "Benjamin Franklin",
+                review: "5",
+                reviewText: "This PT gave me a good workout, I will definetly come back!"
+            },
+            {
+                date: "2020-02-29",
+                user: "Thomas Trump",
+                review: "4",
+                reviewText: "Haven't been able to walk for a week, this PT gave me a real leg day."
+            },
+            {
+                date: "2020-02-21",
+                user: "Frank the Tank",
+                review: "5",
+                reviewText: "I will definetly come back, it was a great workout."
+            }
+        ]
     },
     {
         key: "3",
@@ -48,15 +84,33 @@ const trainers = [
         durationTo: "60",
         costFrom: "50",
         costTo: "100",
-        location: "Online / Gym",
+        location: "Bergen",
         address: "Brunnsgatan 5, 111 38 Stockholm, Sweden",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         weekdaysAvailable: ["Monday", "Tuesday", "Wednesday"],
         typeOfTraining: [{name: "HIIT", icon: HiitIcon}, {name: "Gym", icon: GymIcon}],
-        review: {
-            user: "Name Namesson",
-            reviewText: "This PT gave me a good workout, I will definetly come back!"
-        }
+        numberOfReviews: '90',
+        overallRating: 4.3,
+        reviews: [
+            {
+                date: "2020-03-02",
+                user: "Benjamin Franklin",
+                review: "5",
+                reviewText: "This PT gave me a good workout, I will definetly come back!"
+            },
+            {
+                date: "2020-02-29",
+                user: "Thomas Trump",
+                review: "4",
+                reviewText: "Haven't been able to walk for a week, this PT gave me a real leg day."
+            },
+            {
+                date: "2020-02-21",
+                user: "Frank the Tank",
+                review: "5",
+                reviewText: "I will definetly come back, it was a great workout."
+            }
+        ]
     },
     {
         key: "4",
@@ -66,15 +120,33 @@ const trainers = [
         durationTo: "60",
         costFrom: "40",
         costTo: "90",
-        location: "Online",
+        location: "Uppsala",
         address: "Brunnsgatan 5, 111 38 Stockholm, Sweden",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         weekdaysAvailable: ["Monday", "Wednesday", "Thursday", "Friday"],
         typeOfTraining: [{name: "HIIT", icon: HiitIcon}, {name: "Boxing", icon: BoxingIcon}],
-        review: {
-            user: "Name Namesson",
-            reviewText: "This PT gave me a good workout, I will definetly come back!"
-        }
+        numberOfReviews: '99+',
+        overallRating: 3.1,
+        reviews: [
+            {
+                date: "2020-03-02",
+                user: "Benjamin Franklin",
+                review: "5",
+                reviewText: "This PT gave me a good workout, I will definetly come back!"
+            },
+            {
+                date: "2020-02-29",
+                user: "Thomas Trump",
+                review: "4",
+                reviewText: "Haven't been able to walk for a week, this PT gave me a real leg day."
+            },
+            {
+                date: "2020-02-21",
+                user: "Frank the Tank",
+                review: "5",
+                reviewText: "I will definetly come back, it was a great workout."
+            }
+        ]
     },
     {
         key: "5",
@@ -84,15 +156,33 @@ const trainers = [
         durationTo: "60",
         costFrom: "300",
         costTo: "600",
-        location: "Gym",
+        location: "Södertälje",
         address: "Brunnsgatan 5, 111 38 Stockholm, Sweden",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         weekdaysAvailable: ["Monday", "Tuesday", "Thursday"],
         typeOfTraining: [{name: "HIIT", icon: HiitIcon}, {name: "Running", icon: RunningIcon}, {name: "Gym", icon: GymIcon}, {name: "Boxing", icon: BoxingIcon}],
-        review: {
-            user: "Name Namesson",
-            reviewText: "This PT gave me a good workout, I will definetly come back!"
-        }
+        numberOfReviews: '99+',
+        overallRating: 4.2,
+        reviews: [
+            {
+                date: "2020-03-02",
+                user: "Benjamin Franklin",
+                review: "5",
+                reviewText: "This PT gave me a good workout, I will definetly come back!"
+            },
+            {
+                date: "2020-02-29",
+                user: "Thomas Trump",
+                review: "4",
+                reviewText: "Haven't been able to walk for a week, this PT gave me a real leg day."
+            },
+            {
+                date: "2020-02-21",
+                user: "Frank the Tank",
+                review: "5",
+                reviewText: "I will definetly come back, it was a great workout."
+            }
+        ]
     },
     {
         key: "6",
@@ -102,15 +192,33 @@ const trainers = [
         durationTo: "60",
         costFrom: "50",
         costTo: "100",
-        location: "Online / Gym",
+        location: "Remote",
         address: "Brunnsgatan 5, 111 38 Stockholm, Sweden",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         weekdaysAvailable: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         typeOfTraining: [{name: "HIIT", icon: HiitIcon}, {name: "Running", icon: RunningIcon}, {name: "Boxing", icon: BoxingIcon}],
-        review: {
-            user: "Name Namesson",
-            reviewText: "This PT gave me a good workout, I will definetly come back!"
-        }
+        numberOfReviews: '99+',
+        overallRating: 4.8,
+        reviews: [
+            {
+                date: "2020-03-02",
+                user: "Benjamin Franklin",
+                review: "5",
+                reviewText: "This PT gave me a good workout, I will definetly come back!"
+            },
+            {
+                date: "2020-02-29",
+                user: "Thomas Trump",
+                review: "4",
+                reviewText: "Haven't been able to walk for a week, this PT gave me a real leg day."
+            },
+            {
+                date: "2020-02-21",
+                user: "Frank the Tank",
+                review: "5",
+                reviewText: "I will definetly come back, it was a great workout."
+            }
+        ]
     },
     {
         key: "7",
@@ -120,15 +228,33 @@ const trainers = [
         durationTo: "90",
         costFrom: "80",
         costTo: "120",
-        location: "Online / Gym",
+        location: "Remote",
         address: "Brunnsgatan 5, 111 38 Stockholm, Sweden",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         weekdaysAvailable: ["Monday", "Wednesday", "Thursday", "Friday", "Saturday"],
         typeOfTraining: [{name: "HIIT", icon: HiitIcon}, {name: "Running", icon: RunningIcon}, {name: "Gym", icon: GymIcon}],
-        review: {
-            user: "Name Namesson",
-            reviewText: "This PT gave me a good workout, I will definetly come back!"
-        }
+        numberOfReviews: '3',
+        overallRating: 4.8,
+        reviews: [
+            {
+                date: "2020-03-02",
+                user: "Benjamin Franklin",
+                review: "5",
+                reviewText: "This PT gave me a good workout, I will definetly come back!"
+            },
+            {
+                date: "2020-02-29",
+                user: "Thomas Trump",
+                review: "4",
+                reviewText: "Haven't been able to walk for a week, this PT gave me a real leg day."
+            },
+            {
+                date: "2020-02-21",
+                user: "Frank the Tank",
+                review: "5",
+                reviewText: "I will definetly come back, it was a great workout."
+            }
+        ]
     },
     {
         key: "8",
@@ -138,15 +264,33 @@ const trainers = [
         durationTo: "60",
         costFrom: "50",
         costTo: "100",
-        location: "Online / Gym",
+        location: "Stockholm",
         address: "Brunnsgatan 5, 111 38 Stockholm, Sweden",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         weekdaysAvailable: ["Monday", "Tuesday", "Wednesday"],
         typeOfTraining: [{name: "HIIT", icon: HiitIcon}, {name: "Running", icon: RunningIcon}, {name: "Gym", icon: GymIcon}, {name: "Boxing", icon: BoxingIcon}],
-        review: {
-            user: "Name Namesson",
-            reviewText: "This PT gave me a good workout, I will definetly come back!"
-        }
+        numberOfReviews: '99+',
+        overallRating: 4.7,
+        reviews: [
+            {
+                date: "2020-03-02",
+                user: "Benjamin Franklin",
+                review: "5",
+                reviewText: "This PT gave me a good workout, I will definetly come back!"
+            },
+            {
+                date: "2020-02-29",
+                user: "Thomas Trump",
+                review: "4",
+                reviewText: "Haven't been able to walk for a week, this PT gave me a real leg day."
+            },
+            {
+                date: "2020-02-21",
+                user: "Frank the Tank",
+                review: "5",
+                reviewText: "I will definetly come back, it was a great workout."
+            }
+        ]
     },
     {
         key: "9",
@@ -156,15 +300,33 @@ const trainers = [
         durationTo: "60",
         costFrom: "40",
         costTo: "90",
-        location: "Online",
+        location: "Sollentuna",
         address: "Brunnsgatan 5, 111 38 Stockholm, Sweden",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         weekdaysAvailable: ["Monday", "Wednesday", "Thursday", "Friday"],
         typeOfTraining: [{name: "Running", icon: RunningIcon}, {name: "Gym", icon: GymIcon}, {name: "Boxing", icon: BoxingIcon}],
-        review: {
-            user: "Name Namesson",
-            reviewText: "This PT gave me a good workout, I will definetly come back!"
-        }
+        numberOfReviews: '99+',
+        overallRating: 4.2,
+        reviews: [
+            {
+                date: "2020-03-02",
+                user: "Benjamin Franklin",
+                review: "5",
+                reviewText: "This PT gave me a good workout, I will definetly come back!"
+            },
+            {
+                date: "2020-02-29",
+                user: "Thomas Trump",
+                review: "4",
+                reviewText: "Haven't been able to walk for a week, this PT gave me a real leg day."
+            },
+            {
+                date: "2020-02-21",
+                user: "Frank the Tank",
+                review: "5",
+                reviewText: "I will definetly come back, it was a great workout."
+            }
+        ]
     },
     {
         key: "10",
@@ -174,15 +336,33 @@ const trainers = [
         durationTo: "60",
         costFrom: "300",
         costTo: "600",
-        location: "Gym",
+        location: "Karlskrona",
         address: "Brunnsgatan 5, 111 38 Stockholm, Sweden",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         weekdaysAvailable: ["Monday", "Tuesday", "Thursday"],
         typeOfTraining: [{name: "HIIT", icon: HiitIcon}, {name: "Running", icon: RunningIcon}, {name: "Gym", icon: GymIcon}, {name: "Boxing", icon: BoxingIcon}],
-        review: {
-            user: "Name Namesson",
-            reviewText: "This PT gave me a good workout, I will definetly come back!"
-        }
+        numberOfReviews: '99+',
+        overallRating: 4.5,
+        reviews: [
+            {
+                date: "2020-03-02",
+                user: "Benjamin Franklin",
+                review: "5",
+                reviewText: "This PT gave me a good workout, I will definetly come back!"
+            },
+            {
+                date: "2020-02-29",
+                user: "Thomas Trump",
+                review: "4",
+                reviewText: "Haven't been able to walk for a week, this PT gave me a real leg day."
+            },
+            {
+                date: "2020-02-21",
+                user: "Frank the Tank",
+                review: "5",
+                reviewText: "I will definetly come back, it was a great workout."
+            }
+        ]
     },
 ]
 
