@@ -5,8 +5,8 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function trainerPicker({navigation}) {
   return (
     <View style={styles.container}>
-      <Text>This is the trainerPicker screen</Text>
       <StatusBar style="auto" />
+      <Text>This is the trainerPicker screen</Text>
     </View>
   );
 }

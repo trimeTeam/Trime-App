@@ -16,7 +16,7 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator headerMode='none'>
           <Stack.Screen name="Get Started" component={GetStarted}/>
           <Stack.Screen name="Trainer Picker" component={trainerPicker} />
           <Stack.Screen name="Sign In" component={signIn} />
