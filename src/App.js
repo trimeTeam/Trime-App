@@ -10,18 +10,24 @@ import { createStackNavigator } from '@react-navigation/stack';
 import trainerPicker from './containers/trainerPicker';
 import signIn from './containers/signIn';
 import GetStarted from './containers/getStarted';
+import SelectDate from './containers/selectDate';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-      <NavigationContainer>
-        <Stack.Navigator headerMode='none'>
-          <Stack.Screen name="Get Started" component={GetStarted}/>
-          <Stack.Screen name="Trainer Picker" component={trainerPicker} />
-          <Stack.Screen name="Sign In" component={signIn} />
-        </Stack.Navigator>
-      </NavigationContainer>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Get Started"
+          component={GetStarted}
+        />
+        <Stack.Screen name="Trainer Picker" component={trainerPicker} />
+        <Stack.Screen name="Select Date" component={SelectDate} />
+        <Stack.Screen name="Sign In" component={signIn} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

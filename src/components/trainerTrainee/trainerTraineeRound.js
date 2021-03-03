@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   trainer: {
     width: 72,
     height: 146,
-    marginRight: 64,
+    marginRight: 67,
   },
   imageContainer: {
     flexDirection: 'row',
@@ -62,8 +62,8 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   trainee: {
-    width: 78,
-    height: 139,
+    width: 75,
+    height: 136,
     },
   signInUp: {
     fontWeight: 'bold',
