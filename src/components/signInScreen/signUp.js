@@ -9,7 +9,7 @@ export default function signInUp(props) {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Text style={styles.header}>Welcome!</Text>
+      <Text style={styles.header}>Sign UP</Text>
       <Text style={styles.introText}>Book your first Personal Training{'\n'} session now.</Text>
       <Image source={require('../../assets/trainerTrainee.png')} style={styles.imageStyle}></Image>
       <TouchableOpacity style={styles.button} onPress={props.getStartedBtn}>
@@ -20,3 +20,44 @@ export default function signInUp(props) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    fontFamily: 'Open Sans',
+    height: 800,
+    backgroundColor: '#FDB339',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center'
+  }, 
+  header: {
+    fontSize: 28,
+    fontWeight: 'bold', 
+    marginBottom: 20
+  }, 
+  introText: {
+    fontSize: 18,
+    marginBottom: 20
+  },
+  button: {
+    width: 330,
+    height: 50,
+    backgroundColor: 'black',
+    borderRadius: 50,
+    justifyContent: 'center'
+  },
+  buttonText: {
+    fontSize: 18,
+    color: 'white'
+  },
+  imageStyle: {
+    width: 300,
+    height: 250
+  }, 
+  signInUp: {
+    fontWeight: 'bold',
+  },
+  bottomLinks: {
+    marginTop: 20
+  }
+});
