@@ -1,0 +1,22 @@
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { Button, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+
+export default function signInUp(props) {
+  
+
+
+  return (
+    <View style={styles.container}>
+      <StatusBar style="auto" />
+      <Text style={styles.header}>Welcome!</Text>
+      <Text style={styles.introText}>Book your first Personal Training{'\n'} session now.</Text>
+      <Image source={require('../../assets/trainerTrainee.png')} style={styles.imageStyle}></Image>
+      <TouchableOpacity style={styles.button} onPress={props.getStartedBtn}>
+        <Text style={styles.buttonText}>Get started!</Text>
+      </TouchableOpacity>
+      <Text style={styles.bottomLinks}>Want to become a trainer? <Text style={styles.signInUp}>Sign up here</Text></Text>
+      <Text style={styles.bottomLinks}>Already have an account? <Text style={styles.signInUp}>Sign in</Text></Text>
+    </View>
+  );
+}
