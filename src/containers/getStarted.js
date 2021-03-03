@@ -1,11 +1,12 @@
 import React, { Component } from 'react';  
 import { Platform, StyleSheet, View, Text, Image, TouchableOpacity, Alert, ImageBackground } from 'react-native';  
 import TrainerTrainee from '../components/trainerTrainee/trainerTrainee';
+import TrainerTraineeRound from '../components/trainerTrainee/trainerTraineeRound';
 import SplashScreen from '../components/splashScreen/splashScreen';
 
 export default class GetStarted extends Component {  
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {  
         isVisible: true,   
         }
@@ -33,7 +34,7 @@ export default class GetStarted extends Component {
          return(  
              <View>  
                  {this.state.isVisible === true ? <SplashScreen></SplashScreen> :
-                     <TrainerTrainee getStartedBtn={this.goToTrainerPicker}></TrainerTrainee>}  
+                     <TrainerTraineeRound getStartedBtn={this.goToTrainerPicker}></TrainerTraineeRound>}  
             </View>  
         );  
     }  
