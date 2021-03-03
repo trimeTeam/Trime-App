@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import {
-  Platform,
-  StyleSheet,
   View,
   Text,
   Image,
   TouchableOpacity,
-  Alert,
   ImageBackground,
 } from 'react-native';
+import TrainerCalendar from '../components/selectDate/trainerCalendar';
 
 export default class SelectDate extends Component {
   constructor(props) {
@@ -18,10 +16,12 @@ export default class SelectDate extends Component {
     };
   }
 
+
+
   render() {
     return (
       <View>
-
+        <TrainerCalendar></TrainerCalendar>
       </View>
     );
   }

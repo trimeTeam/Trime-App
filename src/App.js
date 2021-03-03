@@ -15,27 +15,44 @@ import SelectDate from './containers/selectDate';
 const Stack = createStackNavigator();
 
 export default function App() {
+  
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/*         <Stack.Screen
           options={{ headerShown: false }}
           name="Get Started"
           component={GetStarted}
         />
-        <Stack.Screen name="Trainer Picker" component={trainerPicker} />
-        <Stack.Screen name="Select Date" component={SelectDate} />
+        <Stack.Screen name="Trainer Picker" component={trainerPicker} /> */}
+        <Stack.Screen
+          name="Select Date"
+          component={SelectDate}
+          options={{
+            title: 'Select Date',
+            headerStyle: {
+              backgroundColor: '#FDB339',
+              height: 128,
+            },
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              fontSize: 18,
+              marginTop: 50
+            },
+            headerTitleAlign: 'center',
+          }}
+        />
         <Stack.Screen name="Sign In" component={signIn} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
+/* const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+}); */
