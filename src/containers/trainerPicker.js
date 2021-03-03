@@ -28,13 +28,14 @@ export default function TrainerPicker({navigation}) {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <ImageBackground style={styles.map} source={{uri: mapImg}}>
-
         <SearchField/>
-        <SliderContainer view='list'>
-          <ActivitiesBar/>
-          <TrainerList displayTrainerPopup={displayTrainerPopup}/>
-        </SliderContainer>
-        {isPopupDisplayed && <TrainerPopup trainer={clickedTrainer} closeTrainerPopup={closeTrainerPopup}/>}
+        {isPopupDisplayed? 
+          <TrainerPopup trainer={clickedTrainer} closeTrainerPopup={closeTrainerPopup}/> 
+          : 
+          <SliderContainer view='list'>
+            <ActivitiesBar/>
+            <TrainerList displayTrainerPopup={displayTrainerPopup}/>
+          </SliderContainer>}
       </ImageBackground>
     </View>
   );
