@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import PrimaryButton from '../atoms/primaryButton';
 
 export default function trainerTrainee(props) {
 
@@ -21,9 +22,14 @@ export default function trainerTrainee(props) {
           style={styles.trainee}
         ></Image>
       </View>
-      <TouchableOpacity style={styles.button} onPress={props.getStartedBtn}>
-        <Text style={styles.buttonText}>Get started!</Text>
-      </TouchableOpacity>
+      <PrimaryButton
+        textColor={'white'}
+        bgColor={'black'}
+        marginTop={55}
+        onPress={props.getStartedBtn}
+      >
+        Get started!
+      </PrimaryButton>
       <Text style={styles.bottomLink1}>
         Want to become a trainer?{' '}
         <Text style={styles.signInUp}>Sign up here</Text>
@@ -51,18 +57,6 @@ const styles = StyleSheet.create({
   introText: {
     fontSize: 18,
     marginTop: 12,
-  },
-  button: {
-    width: 330,
-    height: 50,
-    backgroundColor: 'black',
-    borderRadius: 50,
-    justifyContent: 'center',
-    marginTop: 55
-  },
-  buttonText: {
-    fontSize: 18,
-    color: 'white',
   },
   trainer: {
     width: 96,

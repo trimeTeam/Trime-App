@@ -19,7 +19,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/*         <Stack.Screen
+{/*         <Stack.Screen
           options={{ headerShown: false }}
           name="Get Started"
           component={GetStarted}

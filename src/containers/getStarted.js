@@ -34,8 +34,9 @@ export default class GetStarted extends Component {
          return(  
              <View>  
                  {this.state.isVisible === true ? <SplashScreen></SplashScreen> :
-                     <TrainerTraineeRound getStartedBtn={this.goToTrainerPicker}></TrainerTraineeRound>}  
+                     <TrainerTrainee getStartedBtn={this.goToTrainerPicker}></TrainerTrainee>}  
             </View>  
         );  
     }  
 }
+
