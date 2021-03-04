@@ -7,7 +7,7 @@ import BoxingIcon from '../../assets/Boxing.png'
 import GymIcon from '../../assets/Gym.png'
 import RunningIcon from '../../assets/Running.png'
 
-export default function ActivitiesBar() {
+export default function ActivitiesBar(props) {
 
     const activities = [
         {name: 'HIIT', icon: HiitIcon},
@@ -18,7 +18,7 @@ export default function ActivitiesBar() {
 
   return (
     <View style={styles.activityContainer}>
-      {activities.map((activity) => <Activity name={activity.name} icon={activity.icon}/>)}
+      {activities.map((activity) => <Activity name={activity.name} icon={activity.icon} isActivityChecked={props.isActivityChecked}/>)}
     </View>
   );
 }
@@ -26,8 +26,8 @@ export default function ActivitiesBar() {
 const styles = StyleSheet.create({
   activityContainer: {
     flexDirection: 'row',
-    borderBottomColor: 'grey',
-    borderBottomWidth: 1,
-    padding: 15
+    paddingHorizontal: 7,
+    paddingVertical: 10,
+    backgroundColor: '#FFF'
   }
 });

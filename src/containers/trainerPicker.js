@@ -1,14 +1,19 @@
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, ImageBackground } from 'react-native';
+import { StyleSheet, View, ImageBackground, Dimensions, SafeAreaView } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 import mapImg from '../assets/map.PNG'
+const {width, height} = Dimensions.get('screen')
 
 import SliderContainer from '../components/atoms/sliderContainer'
 import SearchField from '../components/trainerPicker/searchField'
 import ActivitiesBar from '../components/trainerPicker/activitiesBar'
 import TrainerList from '../components/trainerPicker/trainerList'
 import TrainerPopup from '../components/trainerPicker/trainerPopup'
+import BookingBox from '../components/trainerPicker/bookingBox';
+
+
 
 
 export default function TrainerPicker({navigation}) {
@@ -25,31 +30,34 @@ export default function TrainerPicker({navigation}) {
   }
 
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <ImageBackground style={styles.map} source={{uri: mapImg}}>
+    <SafeAreaView style={styles.container}>
+      <ImageBackground style={styles.map} source={{uri: mapImg}}>       
         <SearchField/>
-        {isPopupDisplayed? 
-          <TrainerPopup trainer={clickedTrainer} closeTrainerPopup={closeTrainerPopup}/> 
-          : 
-          <SliderContainer view='list'>
-            <ActivitiesBar/>
-            <TrainerList displayTrainerPopup={displayTrainerPopup}/>
-          </SliderContainer>}
+        
+        <SliderContainer>
+          <ActivitiesBar isActivityChecked={true}/>
+        </SliderContainer>
+
+        <ScrollView>            
+          <TrainerList displayTrainerPopup={displayTrainerPopup}/>  
+        </ScrollView>
+      
       </ImageBackground>
-    </View>
+      
+      {isPopupDisplayed && <TrainerPopup trainer={clickedTrainer} closeTrainerPopup={closeTrainerPopup}/>}
+      {isPopupDisplayed && <BookingBox trainer={clickedTrainer}/>}
+      
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
   },
   map: {
     resizeMode: 'cover',
-    height: 800,
+    height: height,
     alignSelf: 'stretch',
   }
 });

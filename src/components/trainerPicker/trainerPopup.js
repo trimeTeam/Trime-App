@@ -3,66 +3,77 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text, Image, FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-import SliderContainer from '../atoms/sliderContainer'
 import ReviewListItem from './reviewListItem'
+import BookingBox from './bookingBox'
 
 
 export default function TrainerPopup(props) {
     
     return (
-        <SliderContainer view='popup'>
-            <Icon name='close' size={40} onClick={props.closeTrainerPopup}/>
-            <View style={styles.keyInfo}>
-                <Image style={styles.profileImg} source={{uri: props.trainer.profileImg}}/>
-                <View>
-                    <Text style={styles.name}>{props.trainer.name}</Text>
-                    <View style={styles.iconsContainer}><Icon style={styles.icon} name='timer' size={25}/><Text style={styles.bold}>{props.trainer.durationFrom} - {props.trainer.durationTo} min</Text></View>
-                    <View style={styles.iconsContainer}><Icon style={styles.icon} name='location-on' size={25}/><Text style={styles.bold}>{props.trainer.location}</Text></View>
-                    <View style={styles.iconsContainer}><Icon style={styles.icon} name='star' size={25}/><Text style={styles.bold}>{props.trainer.numberOfReviews} reviews</Text></View>
-                </View>
-            </View>
 
-            <Text style={styles.bold}>Description</Text>
-            <Text>{props.trainer.description}</Text>
-
-            <View style={styles.weekdaysSection}>
-                <Text style={styles.bold}>Weekdays available</Text>
-                <View style={styles.weekdaysCircleContainer}>
-                    <View style={{padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: props.trainer.weekdaysAvailable.includes('Tuesday')? '#FDB339' : '#F6F6F6'}}><Text style={styles.bold}>T</Text></View>
-                    <View style={{padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: props.trainer.weekdaysAvailable.includes('Wednesday')? '#FDB339' : '#F6F6F6'}}><Text style={styles.bold}>W</Text></View>
-                    <View style={{padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: props.trainer.weekdaysAvailable.includes('Thursday')? '#FDB339' : '#F6F6F6'}}><Text style={styles.bold}>T</Text></View>
-                    <View style={{padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: props.trainer.weekdaysAvailable.includes('Monday')? '#FDB339' : '#F6F6F6'}}><Text style={styles.bold}>M</Text></View>
-                    <View style={{padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: props.trainer.weekdaysAvailable.includes('Friday')? '#FDB339' : '#F6F6F6'}}><Text style={styles.bold}>F</Text></View>
-                    <View style={{padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: props.trainer.weekdaysAvailable.includes('Saturday')? '#FDB339' : '#F6F6F6'}}><Text style={styles.bold}>S</Text></View>
-                    <View style={{padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: props.trainer.weekdaysAvailable.includes('Sunday')? '#FDB339' : '#F6F6F6'}}><Text style={styles.bold}>S</Text></View>
-                </View>
-            </View>
-
-            <View style={styles.reviewSection}>
-                <View>
-                    <Text style={styles.bold}>Reviews</Text>
-                    <Text>{props.trainer.numberOfReviews} reviews</Text>
-                    <View style={styles.starContainer}>
-                        <Icon name='star' size={20} color='#FDB339'/>
-                        <Icon name='star' size={20} color='#FDB339'/>
-                        <Icon name='star' size={20} color='#FDB339'/>
-                        <Icon name='star' size={20} color='#FDB339'/>
-                        <Icon name='star' size={20} color='#C4C4C4'/>
+            <View style={styles.popup}>
+                <Icon name='close' size={40} onClick={props.closeTrainerPopup}/>
+                <View style={styles.keyInfo}>
+                    <Image style={styles.profileImg} source={{uri: props.trainer.profileImg}}/>
+                    <View>
+                        <Text style={styles.name}>{props.trainer.name}</Text>
+                        <View style={styles.iconsContainer}><Icon style={styles.icon} name='timer' size={25}/><Text style={styles.bold}>{props.trainer.durationFrom} - {props.trainer.durationTo} min</Text></View>
+                        <View style={styles.iconsContainer}><Icon style={styles.icon} name='location-on' size={25}/><Text style={styles.bold}>{props.trainer.location}</Text></View>
+                        <View style={styles.iconsContainer}><Icon style={styles.icon} name='star' size={25}/><Text style={styles.bold}>{props.trainer.numberOfReviews} reviews</Text></View>
                     </View>
-                </View>            
-                <View>
-                    <Text style={styles.bold}>Overall rating</Text>
-                    <Text style={styles.rating}>{props.trainer.overallRating}</Text>
                 </View>
+
+                <Text style={styles.bold}>Description</Text>
+                <Text>{props.trainer.description}</Text>
+
+                <View style={styles.weekdaysSection}>
+                    <Text style={styles.bold}>Weekdays available</Text>
+                    <View style={styles.weekdaysCircleContainer}>
+                        <View style={{padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: props.trainer.weekdaysAvailable.includes('Tuesday')? '#FDB339' : '#F6F6F6'}}><Text style={styles.bold}>T</Text></View>
+                        <View style={{padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: props.trainer.weekdaysAvailable.includes('Wednesday')? '#FDB339' : '#F6F6F6'}}><Text style={styles.bold}>W</Text></View>
+                        <View style={{padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: props.trainer.weekdaysAvailable.includes('Thursday')? '#FDB339' : '#F6F6F6'}}><Text style={styles.bold}>T</Text></View>
+                        <View style={{padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: props.trainer.weekdaysAvailable.includes('Monday')? '#FDB339' : '#F6F6F6'}}><Text style={styles.bold}>M</Text></View>
+                        <View style={{padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: props.trainer.weekdaysAvailable.includes('Friday')? '#FDB339' : '#F6F6F6'}}><Text style={styles.bold}>F</Text></View>
+                        <View style={{padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: props.trainer.weekdaysAvailable.includes('Saturday')? '#FDB339' : '#F6F6F6'}}><Text style={styles.bold}>S</Text></View>
+                        <View style={{padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: props.trainer.weekdaysAvailable.includes('Sunday')? '#FDB339' : '#F6F6F6'}}><Text style={styles.bold}>S</Text></View>
+                    </View>
+                </View>
+
+                <View style={styles.reviewSection}>
+                    <View>
+                        <Text style={styles.bold}>Reviews</Text>
+                        <Text>{props.trainer.numberOfReviews} reviews</Text>
+                        <View style={styles.starContainer}>
+                            <Icon name='star' size={20} color='#FDB339'/>
+                            <Icon name='star' size={20} color='#FDB339'/>
+                            <Icon name='star' size={20} color='#FDB339'/>
+                            <Icon name='star' size={20} color='#FDB339'/>
+                            <Icon name='star' size={20} color='#C4C4C4'/>
+                        </View>
+                    </View>            
+                    <View>
+                        <Text style={styles.bold}>Overall rating</Text>
+                        <Text style={styles.rating}>{props.trainer.overallRating}</Text>
+                    </View>
+                </View>
+
+                <FlatList data={props.trainer.reviews} renderItem={({item}) => (<ReviewListItem review={item}/>)}/>
             </View>
 
-            <FlatList data={props.trainer.reviews} renderItem={({item}) => (<ReviewListItem review={item}/>)}/>
-            
-        </SliderContainer>
     );
 }
 
 const styles = StyleSheet.create({
+    popup: {
+        position: 'absolute',
+        top: 100,
+        left: 0,
+        width: '100%',
+        padding: 20,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
+        backgroundColor: '#FFF'
+    },
     keyInfo: {
         flexDirection: 'row',
         marginTop: 15,
