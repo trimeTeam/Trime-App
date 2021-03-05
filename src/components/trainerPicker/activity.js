@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text, Image } from 'react-native';
 
 export default function Activity(props) {
-  const [isActivityChecked, setIsActivityChecked] = useState(true)
+  const [isActivityChecked, setIsActivityChecked] = useState(props.isActivityChecked)
 
   function handleClick() {
     setIsActivityChecked(!isActivityChecked)
@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    width: 28,
-    height: 28,
+    width: 22,
+    height: 22,
   },
   text: {
     fontWeight: 600

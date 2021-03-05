@@ -11,7 +11,7 @@ export default function TrainerList(props) {
     return (
         <View style={styles.container}>
         <StatusBar style="auto" />
-        <FlatList data={trainers} renderItem={({item, index}) => (<TrainerListItem trainer={item} displayTrainerPopup={props.displayTrainerPopup}/>)}/>
+        <FlatList data={trainers} renderItem={({item, index}) => (<TrainerListItem key={item.key} trainer={item} displayTrainerPopup={props.displayTrainerPopup}/>)}/>
         </View>
     );
 }

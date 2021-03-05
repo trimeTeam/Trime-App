@@ -24,7 +24,6 @@ export default function SearchField() {
 
 const styles = StyleSheet.create({
   container: {
-    height: 250,
     alignSelf: 'stretch',
     alignItems: 'center',
     justifyContent: 'flex-start',
@@ -35,7 +34,7 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     borderRadius: 20,
     overflow: 'hidden',
-    marginTop: 30
+    marginVertical: 30
   },
   input: {
     padding: 10,

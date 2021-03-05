@@ -4,7 +4,7 @@ import { StyleSheet, View, Text, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
-export default function ReviewListItem(props) {
+export default function TrainerListItem(props) {
  
 
     return (
