@@ -9,7 +9,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 
 import popup from './containers/popup';
-import trainerTrainee from './containers/trainerTrainee';
 
 import trainerPicker from './containers/trainerPicker';
 import signIn from './containers/signIn';
