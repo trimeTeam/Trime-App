@@ -11,6 +11,7 @@ import trainerPicker from './containers/trainerPicker';
 import signIn from './containers/signIn';
 import GetStarted from './containers/getStarted';
 import SelectDate from './containers/selectDate';
+import SelectTime from './containers/selectTime';
 
 const Stack = createStackNavigator();
 
@@ -19,7 +20,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-{/*         <Stack.Screen
+        {/*         <Stack.Screen
           options={{ headerShown: false }}
           name="Get Started"
           component={GetStarted}
@@ -37,7 +38,24 @@ export default function App() {
             headerTitleStyle: {
               fontWeight: 'bold',
               fontSize: 18,
-              marginTop: 50
+              marginTop: 50,
+            },
+            headerTitleAlign: 'center',
+          }}
+        />
+        <Stack.Screen
+          name="Select Time"
+          component={SelectTime}
+          options={{
+            title: 'Select Timeslot',
+            headerStyle: {
+              backgroundColor: '#FDB339',
+              height: 128,
+            },
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              fontSize: 18,
+              marginTop: 50,
             },
             headerTitleAlign: 'center',
           }}

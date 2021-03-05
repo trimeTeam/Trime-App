@@ -12,12 +12,20 @@ export default class TrainerCalendar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isVisible: true,
+      today: [new Date().toISOString().slice(0, 10)],
+      markedDates: {
+        [new Date().toISOString().slice(0, 10)]: {
+          selected: true,
+          marked: true,
+          selectedColor: 'black',
+        },
+      },
     };
   }
 
   datePickHandler = (day) => {
-    console.log(day);
+    this.setState({ markedDates: { [day.dateString]: { selected: true, marked: true, selectedColor: 'black' }}
+    });
   };
 
   render() {
@@ -29,10 +37,9 @@ export default class TrainerCalendar extends Component {
             onDayPress={this.datePickHandler}
             firstDay={1}
             style={{
-              borderWidth: 1,
-              borderColor: 'gray',
               height: 350,
             }}
+            markedDates={this.state.markedDates}
             theme={{
               backgroundColor: '#ffffff',
               calendarBackground: '#ffffff',
@@ -43,8 +50,8 @@ export default class TrainerCalendar extends Component {
               todayTextColor: '#000',
               dayTextColor: '#000',
               textDisabledColor: '#d9e1e8',
-              dotColor: '#00adf5',
-              selectedDotColor: '#ffffff',
+              dotColor: '#000',
+              selectedDotColor: '#000',
               arrowColor: '#000',
               disabledArrowColor: '#d9e1e8',
               monthTextColor: 'black',
@@ -55,7 +62,7 @@ export default class TrainerCalendar extends Component {
               textDayFontWeight: '400',
               textMonthFontWeight: 'bold',
               textDayHeaderFontWeight: '300',
-              textDayFontSize: 14,
+              textDayFontSize: 18,
               textMonthFontSize: 26,
               textDayHeaderFontSize: 14,
             }}

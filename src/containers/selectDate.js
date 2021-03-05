@@ -7,29 +7,42 @@ export default class SelectDate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isVisible: true,
     };
   }
 
-  btnHandlerSave = () => {};
+  btnHandlerSave = () => {
+      this.props.navigation.navigate('Select Time');
+  };
 
-  btnHandlerCancel = () => {};
+  btnHandlerCancel = () => {
+    this.props.navigation.navigate('Trainer Picker');
+  };
 
   render() {
     return (
       <View
         style={{
           fontFamily: 'Open Sans',
-          height: 812,
+          flex: 1,
           backgroundColor: 'white',
           textAlign: 'center',
         }}
       >
         <TrainerCalendar></TrainerCalendar>
-        <PrimaryButton textColor={'black'} bgColor={'#FDB339'} marginTop={145}>
+        <PrimaryButton
+          textColor={'black'}
+          bgColor={'#FDB339'}
+          marginTop={175}
+          btnHandler={this.btnHandlerSave}
+        >
           Save
         </PrimaryButton>
-        <PrimaryButton textColor={'black'} bgColor={'#F6F6F6'} marginTop={20}>
+        <PrimaryButton
+          textColor={'black'}
+          bgColor={'#F6F6F6'}
+          marginTop={20}
+          btnHandler={this.btnHandlerCancel}
+        >
           Cancel
         </PrimaryButton>
       </View>

@@ -2,8 +2,6 @@ import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 
 const primaryButton = (props) => {
-    const bgColor = props.bgColor;
-    const textColor = props.textColor;
     const marginTop = props.marginTop;
 
     return (
@@ -15,14 +13,14 @@ const primaryButton = (props) => {
             borderRadius: 42,
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: bgColor,
+            backgroundColor: [props.bgColor],
             marginTop: marginTop,
             alignSelf: 'center'
           }}
           onPress={props.btnHandler}
         >
           <Text
-            style={{ fontSize: 18, fontWeight: 600, color: textColor}}
+            style={{ fontSize: 18, fontWeight: 600, color: [props.textColor]}}
           >
             {props.children}
           </Text>
