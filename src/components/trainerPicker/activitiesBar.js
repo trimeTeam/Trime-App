@@ -18,7 +18,7 @@ export default function ActivitiesBar(props) {
 
   return (
     <View style={styles.activityContainer}>
-      {activities.map((activity) => <Activity name={activity.name} icon={activity.icon} isActivityChecked={props.isActivityChecked}/>)}
+      {activities.map((activity) => <Activity key={Math.random().toString()} name={activity.name} icon={activity.icon} isActivityChecked={props.isActivityChecked}/>)}
     </View>
   );
 }

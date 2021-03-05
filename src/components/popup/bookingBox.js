@@ -2,10 +2,10 @@ import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-import ActivitiesBar from './activitiesBar'
+import ActivitiesBar from '../trainerPicker/activitiesBar'
 
 
-export default function BookingBox(props) {
+export default function BookingBox(props,{navigation}) {
 
   return (
     <View style={styles.bookingBox}>
@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     width: '90%',
     position: 'absolute',
-    top: 580
+    bottom: 35,
+    zIndex:4
   },
   bookingInfo: {
       marginTop: 5,
