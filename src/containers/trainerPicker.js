@@ -20,11 +20,15 @@ export default function TrainerPicker({navigation}) {
     navigation.navigate('Popup', {trainer: trainerObject})
   }
 
+  function displayFilters() {
+    navigation.navigate('Filter')
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground style={styles.map} source={{uri: mapImg}}>                      
         
-        <SearchField/>
+        <SearchField displayFilters={displayFilters}/>
         <SliderContainer>
           <ActivitiesBar isActivityChecked={true}/>
         </SliderContainer>
