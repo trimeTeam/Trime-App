@@ -1,21 +1,51 @@
+import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, ImageBackground, Dimensions, SafeAreaView } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
-export default function trainerPicker({navigation}) {
+import mapImg from '../assets/map.PNG'
+const {width, height} = Dimensions.get('screen')
+
+import SliderContainer from '../components/atoms/sliderContainer'
+import SearchField from '../components/trainerPicker/searchField'
+import ActivitiesBar from '../components/trainerPicker/activitiesBar'
+import TrainerList from '../components/trainerPicker/trainerList'
+
+
+
+
+export default function TrainerPicker({navigation}) {
+
+  function displayTrainerPopup(trainerObject) {
+    navigation.navigate('Popup', {trainer: trainerObject})
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>This is the trainerPicker screen</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <ImageBackground style={styles.map} source={{uri: mapImg}}>                      
+        
+        <SearchField/>
+        <SliderContainer>
+          <ActivitiesBar isActivityChecked={true}/>
+        </SliderContainer>
+              
+        <ScrollView>
+          <TrainerList displayTrainerPopup={displayTrainerPopup}/>
+        </ScrollView>
+
+      </ImageBackground>
+      
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
+  map: {
+    resizeMode: 'cover',
+    height: height,
+    alignSelf: 'stretch',
+  }
 });
