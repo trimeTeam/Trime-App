@@ -14,7 +14,6 @@ export default function Popup({route, navigation}) {
     const trainer = route.params.trainer
 
     function displaySelectDate() {
-        console.log('Clicked on Book')
         navigation.navigate('Select Date')
     }
     

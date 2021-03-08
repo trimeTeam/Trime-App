@@ -101,7 +101,7 @@ export default function Filter({ navigation }) {
                         />
                     </View>
 
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Trainer Picker')}>
                         <Text style={styles.buttonText}>Apply</Text>
                     </TouchableOpacity>
                 </View>
