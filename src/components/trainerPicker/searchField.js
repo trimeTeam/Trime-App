@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, TextInput } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-export default function SearchField() {
+export default function SearchField(props) {
   const [searchInput, setSearchInput] = useState("")
 
   function handleChange(event) {
@@ -16,7 +16,7 @@ export default function SearchField() {
       <View style={styles.searchField}>
         <Icon.Button backgroundColor='white' borderRadius='0' color='grey' name='search'/>
         <TextInput style={styles.input} placeholder='Search for trainer' value={searchInput} onChange={handleChange}/>
-        <Icon.Button backgroundColor='white' borderRadius='0' color='grey' name='sliders'/>
+        <Icon.Button backgroundColor='white' borderRadius='0' color='grey' name='sliders' onClick={props.displayFilters}/>
       </View>
     </View>
   );

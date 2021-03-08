@@ -9,6 +9,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 
 import popup from './containers/popup';
+import filter from './containers/filter';
 
 import trainerPicker from './containers/trainerPicker';
 import signIn from './containers/signIn';
@@ -29,6 +30,7 @@ export default function App() {
         />
         <Stack.Screen name="Trainer Picker" component={trainerPicker} />
         <Stack.Screen options={{ headerShown: false }} name="Popup" component={popup} />
+        <Stack.Screen options={{ headerShown: false }} name="Filter" component={filter} />
         <Stack.Screen name="Select Date" component={SelectDate} />
         <Stack.Screen name="Sign In" component={signIn} />
       </Stack.Navigator>
