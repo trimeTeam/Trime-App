@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
-import { SafeAreaView, StyleSheet, View, Text, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView, StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import Slider from '@react-native-community/slider'
+
+import DatePicker from 'react-native-datepicker'
 
 import ActivitiesBar from '../components/trainerPicker/activitiesBar'
 
@@ -45,22 +47,63 @@ export default function Filter({ navigation }) {
                         thumbTintColor="#FDB339"
                         onValueChange={setSliderValue}
                     />
-                    <Text style={styles.bold}>{typeof sliderValue === 'string'? sliderValue : Math.round(sliderValue) + ' SEK'}</Text>
+                    <Text style={styles.bold}>{typeof sliderValue === 'string' ? sliderValue : Math.round(sliderValue) + ' SEK'}</Text>
                 </View>
                 <View style={styles.filterContentContainer}>
                     <Text style={styles.underHeading}>AVAILABLE DAYS</Text>
                     <View style={styles.weekdaysCircleContainer}>
-                    <View onClick={() => {setIsMondayChecked(!isMondayChecked)}} style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: isMondayChecked ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>M</Text></View>
-                    <View onClick={() => {setIsTuesdayChecked(!isTuesdayChecked)}} style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: isTuesdayChecked ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>T</Text></View>
-                    <View onClick={() => {setIsWednesdayChecked(!isWednesdayChecked)}} style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: isWednesdayChecked ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>W</Text></View>
-                    <View onClick={() => {setIsThursdayChecked(!isThursdayChecked)}} style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: isThursdayChecked ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>T</Text></View>
-                    <View onClick={() => {setIsFridayChecked(!isFridayChecked)}} style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: isFridayChecked ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>F</Text></View>
-                    <View onClick={() => {setIsSaturdayChecked(!isSaturdayChecked)}} style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: isSaturdayChecked ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>S</Text></View>
-                    <View onClick={() => {setIsSundayChecked(!isSundayChecked)}} style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: isSundayChecked ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>S</Text></View>
-                </View>
+                        <View onClick={() => { setIsMondayChecked(!isMondayChecked) }} style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: isMondayChecked ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>M</Text></View>
+                        <View onClick={() => { setIsTuesdayChecked(!isTuesdayChecked) }} style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: isTuesdayChecked ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>T</Text></View>
+                        <View onClick={() => { setIsWednesdayChecked(!isWednesdayChecked) }} style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: isWednesdayChecked ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>W</Text></View>
+                        <View onClick={() => { setIsThursdayChecked(!isThursdayChecked) }} style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: isThursdayChecked ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>T</Text></View>
+                        <View onClick={() => { setIsFridayChecked(!isFridayChecked) }} style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: isFridayChecked ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>F</Text></View>
+                        <View onClick={() => { setIsSaturdayChecked(!isSaturdayChecked) }} style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: isSaturdayChecked ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>S</Text></View>
+                        <View onClick={() => { setIsSundayChecked(!isSundayChecked) }} style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: isSundayChecked ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>S</Text></View>
+                    </View>
                 </View>
                 <View style={styles.filterContentContainer}>
                     <Text style={styles.underHeading}>AVAILABLE BETWEEN</Text>
+
+                    <View style={styles.dateContainer}>
+
+                        <DatePicker
+                            style={{
+                                width: 150,
+                            }}
+                            mode="date"
+                            placeholder="From"
+                            format="YYYY-MM-DD"
+                            minDate="2021-03-05"
+                            maxDate="2021-06-05"
+                            confirmBtnText="Confirm"
+                            cancelBtnText="Cancel"
+                            showIcon={false}
+                            customStyles={{
+                                
+                            }}
+                        />
+
+                        <DatePicker
+                            style={{
+                                width: 150,
+
+                            }}
+                            mode="date"
+                            placeholder="To"
+                            format="YYYY-MM-DD"
+                            minDate="2021-03-05"
+                            maxDate="2021-06-05"
+                            confirmBtnText="Confirm"
+                            cancelBtnText="Cancel"
+                            showIcon={false}
+                            customStyles={{
+                            }}
+                        />
+                    </View>
+
+                    <TouchableOpacity style={styles.button}>
+                        <Text style={styles.buttonText}>Apply</Text>
+                    </TouchableOpacity>
                 </View>
             </ScrollView>
 
@@ -72,7 +115,7 @@ const styles = StyleSheet.create({
 
     container: {
         backgroundColor: '#FFF',
-
+        height: '100%'
     },
     grabber: {
         width: 70,
@@ -109,4 +152,19 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         justifyContent: 'space-between'
     },
+    dateContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: 30,
+        marginTop: 15
+    },
+    button: {
+        backgroundColor: '#000',
+        padding: 8,
+        borderRadius: 100
+    },
+    buttonText: {
+        color: '#FFF',
+        fontSize: 20
+    }
 });

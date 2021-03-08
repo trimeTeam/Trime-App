@@ -12,11 +12,16 @@ import TrainerPopupInfo from '../components/popup/trainerPopupInfo'
 export default function Popup({route, navigation}) {
 
     const trainer = route.params.trainer
+
+    function displaySelectDate() {
+        console.log('Clicked on Book')
+        navigation.navigate('Select Date')
+    }
     
     return (
         <SafeAreaView style={styles.container}>
             <ImageBackground style={styles.map} source={{uri: mapImg}}>                   
-                <BookingBox trainer={trainer}/>
+                <BookingBox trainer={trainer} displaySelectDate={displaySelectDate}/>
 
                 <View style={styles.popup}>
                     <View style={styles.grabber}/>
@@ -28,7 +33,7 @@ export default function Popup({route, navigation}) {
                 </ScrollView>
             </ImageBackground>
         </SafeAreaView>
-    );
+    )
 }
 
 const styles = StyleSheet.create({

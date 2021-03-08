@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import ActivitiesBar from '../trainerPicker/activitiesBar'
 
 
-export default function BookingBox(props,{navigation}) {
+export default function BookingBox(props) {
 
   return (
     <View style={styles.bookingBox}>
@@ -15,7 +15,7 @@ export default function BookingBox(props,{navigation}) {
             <Text style={styles.priceText}><Text style={styles.bold}>{props.trainer.costTo} SEK</Text> an hour</Text>
             <View style={styles.rating}><Icon name='star' size={20} color='#FDB339'/><Text style={styles.bold}> {props.trainer.overallRating} </Text> <Text>({props.trainer.numberOfReviews})</Text></View>
         </View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={props.displaySelectDate}>
             <Text style={styles.buttonText}>Book</Text>
         </TouchableOpacity>
       </View>

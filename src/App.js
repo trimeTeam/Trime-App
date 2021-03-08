@@ -23,13 +23,13 @@ export default function App() {
 
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen
+        <Stack.Screen
           options={{ headerShown: false }}
           name="Get Started"
           component={GetStarted}
         />
         <Stack.Screen name="Trainer Picker" component={trainerPicker} />
-        <Stack.Screen options={{ headerShown: false }} name="Popup" component={popup} /> */}
+        <Stack.Screen options={{ headerShown: false }} name="Popup" component={popup} />
         <Stack.Screen options={{ headerShown: false }} name="Filter" component={filter} />
         <Stack.Screen name="Select Date" component={SelectDate} />
         <Stack.Screen name="Sign In" component={signIn} />
