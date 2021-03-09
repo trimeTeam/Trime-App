@@ -16,7 +16,8 @@ const timeSlot = (props) => {
           alignItems: 'center',
           backgroundColor: props.selected ? 'black' : '#F6F6F6',
         }}
-        onPress={props.selectTimeHandler}
+        onPress={() => props.selectTimeHandler(props.id)}
+        id={props.id}
       >
         <Text
           style={{

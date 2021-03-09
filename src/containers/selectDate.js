@@ -32,7 +32,7 @@ export default class SelectDate extends Component {
         <PrimaryButton
           textColor={'black'}
           bgColor={'#FDB339'}
-          marginTop={175}
+          marginTop={180}
           btnHandler={this.btnHandlerSave}
         >
           Save
