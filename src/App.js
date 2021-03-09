@@ -23,6 +23,9 @@ import { useFonts } from '@expo-google-fonts/open-sans';
 let customFonts = {
   'OpenSans-Bold': require('./assets/fonts/OpenSans-Bold.ttf'),
 };
+import orderDetail from './components/orderDetail/orderDetail';
+
+
 
 const Stack = createStackNavigator();
 
@@ -92,6 +95,7 @@ export default function App() {
           }}
         />
         <Stack.Screen name="Sign In" component={signIn} />
+        <Stack.Screen name="Order Detail" component={orderDetail} />
         <Stack.Screen
           name="Booking Confirmed"
           component={bookingConfirmed}
