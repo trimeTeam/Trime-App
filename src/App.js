@@ -20,6 +20,10 @@ import bookingConfirmed from './containers/bookingConfirmed';
 
 import { useFonts } from '@expo-google-fonts/open-sans';
 
+let customFonts = {
+  'OpenSans-Bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+};
+
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -37,7 +41,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-       <Stack.Screen
+        <Stack.Screen
           options={{ headerShown: false }}
           name="Get Started"
           component={GetStarted}
@@ -52,7 +56,7 @@ export default function App() {
           options={{ headerShown: false }}
           name="Filter"
           component={filter}
-        /> 
+        />
         <Stack.Screen
           name="Select Date"
           component={SelectDate}
@@ -63,7 +67,7 @@ export default function App() {
               height: 128,
             },
             headerTitleStyle: {
-              fontWeight: 'bold',
+              fontFamily: 'OpenSans-Bold',
               fontSize: 18,
               marginTop: 50,
             },
@@ -80,14 +84,14 @@ export default function App() {
               height: 128,
             },
             headerTitleStyle: {
-              fontWeight: 'bold',
+              fontFamily: 'OpenSans-Bold',
               fontSize: 18,
               marginTop: 50,
             },
             headerTitleAlign: 'center',
           }}
         />
-        <Stack.Screen name="Sign In" component={signIn} />  
+        <Stack.Screen name="Sign In" component={signIn} />
         <Stack.Screen
           name="Booking Confirmed"
           component={bookingConfirmed}
