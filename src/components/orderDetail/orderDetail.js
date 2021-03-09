@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, Image, Dimensions} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { CheckBox } from 'react-native-elements'
 
+const {width, height} = Dimensions.get('screen')
 
 const date = new Date();
 
@@ -44,18 +45,18 @@ export default function orderDetail({navigation}) {
     <Text>Lorum Ipsum@something.com</Text>
   </View>
 
-<View style={styles.containerFirst}>
-<Text style = {styles.where}>Location: </Text>
-<Text>Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum</Text>
-</View>
+  <View style={styles.containerFirst}>
+    <Text style = {styles.where}>Location: </Text>
+    <Text>Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum</Text>
+  </View>
 
   <View style={styles.paymentContainerFirst}>
-    <View >
-      <Text style = {styles.iconSelected} >
+    <View style={styles.payment}>
+      {/* <Text style = {styles.iconSelected} > */}
         <Icon name= 'cc-visa' size={40} />
-      </Text>
+      {/* </Text> */}
+      <Text style={styles.paymentText}>Visa</Text>
     </View>
-    <Text style={styles.paymentText}>Visa</Text>
     <View style={{marginVertical: 'atuo'}}>
       <CheckBox
       checked='true'
@@ -67,44 +68,39 @@ export default function orderDetail({navigation}) {
     </View>
   </View>
 
-<View style={styles.paymentContainer}>
-<View >
-  <Text style = {styles.icon}>
-    <Icon name= 'cc-mastercard' size={40} />
-  </Text>
-</View>
-<Text style={styles.paymentText}>Master</Text>
-<CheckBox
-  checkedIcon='dot-circle-o'
-  uncheckedIcon='circle-o'
-/>
-</View>
+    <View style={styles.paymentContainer}>
+    <View style={styles.payment}>
+        <Icon style ={styles.icon} name= 'cc-mastercard' size={40} />
+        <Text style={styles.paymentText}>Master</Text>
+    </View>
+    <CheckBox
+      checkedIcon='dot-circle-o'
+      uncheckedIcon='circle-o'
+    />
+    </View>
 
-<View style={styles.paymentContainer}>
-<View >
-  <Text style = {styles.icon}>
-    <Icon name= 'cc-amex' size={40} />
-  </Text>
-</View>
-<Text style={styles.paymentText}>Amex</Text>
-<CheckBox
-  checkedIcon='dot-circle-o'
-  uncheckedIcon='circle-o'
-/>
-</View>
 
-<View style={styles.paymentContainer}>
-<View >
-  <Text style = {styles.icon}>
-    <Icon name= 'apple-pay' size={40} />
-  </Text>
-</View>
-<Text style={styles.paymentText}>Apple Pay</Text>
-<CheckBox
-  checkedIcon='dot-circle-o'
-  uncheckedIcon='circle-o'
-/>
-</View>
+    <View style={styles.paymentContainer}>
+    <View style={styles.payment}>
+        <Icon style ={styles.icon} name= 'cc-amex' size={40} />
+        <Text style={styles.paymentText}>Amex</Text>
+    </View>
+    <CheckBox
+      checkedIcon='dot-circle-o'
+      uncheckedIcon='circle-o'
+    />
+    </View>
+
+    <View style={styles.paymentContainer}>
+    <View style={styles.payment}>
+        <Icon style ={styles.icon} name= 'apple-pay' size={40} />
+        <Text style={styles.paymentText}>Apple Pay</Text>
+    </View>
+    <CheckBox
+      checkedIcon='dot-circle-o'
+      uncheckedIcon='circle-o'
+    />
+    </View>
 
   <TouchableOpacity style={styles.button}>
     <Text style={styles.buttonText}>Checkout</Text>
@@ -120,9 +116,11 @@ export default function orderDetail({navigation}) {
 
 const styles = StyleSheet.create({
   mainContainer:{
-    marginHorizontal:15,
-    
+    height: height,
+    width: width,  
+    padding: 10  
   },
+
   containerFirst:{
     marginTop:30,
     flexDirection: 'row',
@@ -158,7 +156,7 @@ const styles = StyleSheet.create({
 
   button: {
     marginTop: 40,
-    width:400,
+    alignSelf:'stretch',
     height: 50,
     backgroundColor: '#FDB339',
     borderRadius: 50,
@@ -174,11 +172,16 @@ const styles = StyleSheet.create({
 
   buttonGuest: {
     marginTop: 20,
-    width:400,
+    alignSelf:'stretch',
     height: 50,
     backgroundColor: '#F6F6F6',
     borderRadius: 50,
     justifyContent: 'center'
+  },
+
+  payment: {
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   paymentContainerFirst:{
     marginTop:20,
@@ -187,19 +190,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderBottomColor: 'gray', 
     borderBottomWidth: 1,
+    justifyContent:'space-between'
 
   },
   paymentContainer: {
+    // marginTop:20,
     flexDirection:'row', 
-    alignItems: 'center',
+    color: 'grey',
     borderBottomColor: 'gray', 
     borderBottomWidth: 1,
+    justifyContent:'space-between'
     
   },
   icon:{
   padding: 5,
-  marginRight:20,
-  marginVertical: 10,
+  marginRight:10,
   color:'grey'
   },
 
@@ -210,7 +215,7 @@ const styles = StyleSheet.create({
   },
 
   paymentText:{
-    width: 250,
+    marginLeft: 15,
     fontSize: 18, 
     textAlign: 'left',
     color: '#616161'
