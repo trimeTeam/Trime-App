@@ -18,13 +18,26 @@ import SelectDate from './containers/selectDate';
 import SelectTime from './containers/selectTime';
 import bookingConfirmed from './containers/bookingConfirmed';
 
+import { useFonts } from '@expo-google-fonts/open-sans';
+
 const Stack = createStackNavigator();
 
 export default function App() {
+    let [fontsLoaded] = useFonts({
+      'OpenSans-Bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+      'OpenSans-ExtraBold': require('./assets/fonts/OpenSans-ExtraBold.ttf'),
+      'OpenSans-Regular': require('./assets/fonts/OpenSans-Regular.ttf'),
+      'OpenSans-SemiBold': require('./assets/fonts/OpenSans-SemiBold.ttf'),
+      'OpenSans-Light': require('./assets/fonts/OpenSans-Light.ttf'),
+    });
+
+    if (!fontsLoaded) {
+      return 'Font not found';
+    }
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+       <Stack.Screen
           options={{ headerShown: false }}
           name="Get Started"
           component={GetStarted}
@@ -39,7 +52,7 @@ export default function App() {
           options={{ headerShown: false }}
           name="Filter"
           component={filter}
-        />
+        /> 
         <Stack.Screen
           name="Select Date"
           component={SelectDate}
@@ -74,7 +87,7 @@ export default function App() {
             headerTitleAlign: 'center',
           }}
         />
-        <Stack.Screen name="Sign In" component={signIn} /> 
+        <Stack.Screen name="Sign In" component={signIn} />  
         <Stack.Screen
           name="Booking Confirmed"
           component={bookingConfirmed}

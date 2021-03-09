@@ -12,6 +12,11 @@ import PrimaryButton from '../components/atoms/primaryButton';
 
 const { width, height } = Dimensions.get('screen');
 
+let customFonts = {
+  'OpenSans-Regular': require('../assets/fonts/OpenSans-Regular.ttf'),
+  'OpenSans-Bold': require('../assets/fonts/OpenSans-Bold.ttf'),
+};
+
 const bookingConfirmed = (props) => {
   return (
     <View style={styles.container}>
@@ -48,43 +53,43 @@ const bookingConfirmed = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    fontFamily: 'Open Sans',
     height: height,
     width: width,
     backgroundColor: 'white',
     alignItems: 'center',
     textAlign: 'center',
-    },
-    imageContainer: {
-        width: width,
-        height: 400,
-        alignItems: 'center',
-        marginTop: 10
-    },
+  },
+  imageContainer: {
+    width: width,
+    height: 400,
+    alignItems: 'center',
+  },
   header: {
     fontSize: 28,
-    fontWeight: 'bold',
+    fontFamily: 'OpenSans-Bold',
     marginTop: -50,
   },
   greatJob: {
+    fontFamily: 'OpenSans-Regular',
     fontSize: 14,
     marginTop: 12,
   },
   high5: {
     width: 355,
     height: 355,
-      marginTop: 44,
-    position: 'absolute'
-    },
-    check: {
+    marginTop: 44,
+    position: 'absolute',
+  },
+  check: {
     width: 43,
     height: 42,
-        marginTop: 242,
-        position: 'absolute'
+    marginTop: 242,
+    position: 'absolute',
   },
   confirmation: {
+    fontFamily: 'OpenSans-Regular',
     marginTop: 112,
-    fontSize: 11
+    fontSize: 11,
   },
 });
 
