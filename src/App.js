@@ -24,7 +24,6 @@ export default function App() {
 
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Order Detail" component={orderDetail} />
         <Stack.Screen
           options={{ headerShown: false }}
           name="Get Started"
@@ -35,6 +34,7 @@ export default function App() {
         <Stack.Screen options={{ headerShown: false }} name="Filter" component={filter} />
         <Stack.Screen name="Select Date" component={SelectDate} />
         <Stack.Screen name="Sign In" component={signIn} />
+        <Stack.Screen name="Order Detail" component={orderDetail} />
       </Stack.Navigator>
     </NavigationContainer>
 
