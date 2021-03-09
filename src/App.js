@@ -15,13 +15,15 @@ import trainerPicker from './containers/trainerPicker';
 import signIn from './containers/signIn';
 import GetStarted from './containers/getStarted';
 import SelectDate from './containers/selectDate';
+import SelectTime from './containers/selectTime';
 import orderDetail from './components/orderDetail/orderDetail';
+
+
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
@@ -30,15 +32,54 @@ export default function App() {
           component={GetStarted}
         />
         <Stack.Screen name="Trainer Picker" component={trainerPicker} />
-        <Stack.Screen options={{ headerShown: false }} name="Popup" component={popup} />
-        <Stack.Screen options={{ headerShown: false }} name="Filter" component={filter} />
-        <Stack.Screen name="Select Date" component={SelectDate} />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Popup"
+          component={popup}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Filter"
+          component={filter}
+        />
+        <Stack.Screen
+          name="Select Date"
+          component={SelectDate}
+          options={{
+            title: 'Select Date',
+            headerStyle: {
+              backgroundColor: '#FDB339',
+              height: 128,
+            },
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              fontSize: 18,
+              marginTop: 50,
+            },
+            headerTitleAlign: 'center',
+          }}
+        />
+        <Stack.Screen
+          name="Select Time"
+          component={SelectTime}
+          options={{
+            title: 'Select Timeslot',
+            headerStyle: {
+              backgroundColor: '#FDB339',
+              height: 128,
+            },
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              fontSize: 18,
+              marginTop: 50,
+            },
+            headerTitleAlign: 'center',
+          }}
+        />
         <Stack.Screen name="Sign In" component={signIn} />
         <Stack.Screen name="Order Detail" component={orderDetail} />
       </Stack.Navigator>
     </NavigationContainer>
-
-
   );
 }
 
@@ -49,4 +90,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+}); 
