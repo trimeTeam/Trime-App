@@ -1,38 +1,52 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Animated, Dimensions } from 'react-native';
+const {width, height} = Dimensions.get('screen')
 
-export default function SliderContainer({children, view}) {
+export default function SliderContainer({children}) {
+
+  const [alignment] = useState(new Animated.Value(0))
+
+  function bringUpSlider () {
+    Animated.timing(alignment, {toValue:2, duration: 500}).start()
+  }
+
+  function bringDownSlider () {
+    Animated.timing(alignment, {toValue:1, duration: 500}).start()
+  }
+
+  function gestureHandler (e) {
+    if (e.nativeEvent.contentOffset.y > 0) bringUpSlider()
+    else if (e.nativeEvent.contentOffset.y < 0) bringDownSlider()
+  }
+
+  
+  const sliderIntropolate = alignment.interpolate({inputRange: [0,1,2], outputRange: [200, 500, 0]})
+  const sliderStyles = {
+    marginTop: sliderIntropolate, 
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    backgroundColor: '#FFF',
+    padding: 10,
+    width: width,
+    borderBottomColor: 'grey',
+    borderBottomWidth: 1,
+    zIndex: 2,
+  }
 
   return (
-      <View style={view === 'popup'? styles.popup: styles.list} >
+      <Animated.View style={sliderStyles} >
         <StatusBar style="auto" />
-        <View style={styles.slider}/>
+        <View style={styles.grabber} onScroll={(e) => gestureHandler(e)}/>
+
         <View>{children}</View>
-      </View>
+
+      </Animated.View>
   );
 }
 
 const styles = StyleSheet.create({
-  popup: {
-    position: 'absolute',
-    top: 100,
-    left: 0,
-    backgroundColor: '#FFF',
-    width: '100%',
-    padding: 20,
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-  },
-  list: {
-    backgroundColor: '#FFF',
-    borderBottomWidth: 2,
-    borderBottomColor: '#C4C4C4',
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    padding: 10,
-  },
-  slider: {
+  grabber: {
     width: 70,
     height: 4,
     backgroundColor: '#C4C4C4',
