@@ -104,11 +104,11 @@ export default function orderDetail({navigation}) {
     />
     </View>
 
-  <TouchableOpacity style={styles.button}>
+  <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Payment')}>
     <Text style={styles.buttonText}>Checkout</Text>
   </TouchableOpacity>
         
-  <TouchableOpacity style={styles.buttonGuest}>
+  <TouchableOpacity style={styles.buttonGuest} onPress={()=>navigation.goBack()}>
     <Text style={styles.buttonText}>Cancel</Text>
   </TouchableOpacity>
 

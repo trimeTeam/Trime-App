@@ -17,14 +17,14 @@ import Payment from './containers/payment';
 import GetStarted from './containers/getStarted';
 import SelectDate from './containers/selectDate';
 import SelectTime from './containers/selectTime';
-import bookingConfirmed from './containers/bookingConfirmed';
+import BookingConfirmed from './containers/bookingConfirmed';
 
 import { useFonts } from '@expo-google-fonts/open-sans';
 
 let customFonts = {
   'OpenSans-Bold': require('./assets/fonts/OpenSans-Bold.ttf'),
 };
-import orderDetail from './components/orderDetail/orderDetail';
+import OrderDetail from './components/orderDetail/orderDetail';
 
 
 
@@ -51,16 +51,16 @@ export default function App() {
           component={GetStarted}
         />
 
-        <Stack.Screen name="Trainer Picker" component={trainerPicker} />
+        <Stack.Screen name="Trainer Picker" component={TrainerPicker} />
         <Stack.Screen
           options={{ headerShown: false }}
           name="Popup"
-          component={popup}
+          component={Popup}
         />
         <Stack.Screen
           options={{ headerShown: false }}
           name="Filter"
-          component={filter}
+          component={Filter}
         />
         <Stack.Screen
           name="Select Date"
@@ -96,12 +96,12 @@ export default function App() {
             headerTitleAlign: 'center',
           }}
         />
-        <Stack.Screen name="Sign In" component={signIn} />
-        <Stack.Screen name="Order Detail" component={orderDetail} />
+        <Stack.Screen name="Sign In" component={SignIn} />
+        <Stack.Screen name="Order Detail" component={OrderDetail} />
         <Stack.Screen name="Payment" component={Payment} />
         <Stack.Screen
           name="Booking Confirmed"
-          component={bookingConfirmed}
+          component={BookingConfirmed}
           options={{ headerShown: false }}
         />
 
