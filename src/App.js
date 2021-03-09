@@ -16,6 +16,7 @@ import signIn from './containers/signIn';
 import GetStarted from './containers/getStarted';
 import SelectDate from './containers/selectDate';
 import SelectTime from './containers/selectTime';
+import bookingConfirmed from './containers/bookingConfirmed';
 
 const Stack = createStackNavigator();
 
@@ -73,7 +74,12 @@ export default function App() {
             headerTitleAlign: 'center',
           }}
         />
-        <Stack.Screen name="Sign In" component={signIn} />
+        <Stack.Screen name="Sign In" component={signIn} /> 
+        <Stack.Screen
+          name="Booking Confirmed"
+          component={bookingConfirmed}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
