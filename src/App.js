@@ -20,12 +20,22 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/*         <Stack.Screen
+        <Stack.Screen
           options={{ headerShown: false }}
           name="Get Started"
           component={GetStarted}
         />
-        <Stack.Screen name="Trainer Picker" component={trainerPicker} /> */}
+        <Stack.Screen name="Trainer Picker" component={trainerPicker} />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Popup"
+          component={popup}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Filter"
+          component={filter}
+        />
         <Stack.Screen
           name="Select Date"
           component={SelectDate}
@@ -66,11 +76,12 @@ export default function App() {
   );
 }
 
-/* const styles = StyleSheet.create({
+
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
-}); */
+}); 

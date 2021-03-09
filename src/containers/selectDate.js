@@ -11,7 +11,7 @@ export default class SelectDate extends Component {
   }
 
   btnHandlerSave = () => {
-      this.props.navigation.navigate('Select Time');
+    this.props.navigation.navigate('Select Time');
   };
 
   btnHandlerCancel = () => {
