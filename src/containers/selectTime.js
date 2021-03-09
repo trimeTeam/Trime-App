@@ -141,13 +141,12 @@ export default class SelectTime extends Component {
     return (
       <View
         style={{
-          fontFamily: 'Open Sans',
           flex: 1,
           backgroundColor: 'white',
           textAlign: 'center',
         }}
       >
-        <View style={{ marginTop: 63}}>
+        <View style={{ marginTop: 60}}>
           <TimeSlots
             timeSlots={this.state.workoutMinutes}
             selectTimeHandler={this.selectTimeHandler}
@@ -156,7 +155,7 @@ export default class SelectTime extends Component {
           </TimeSlots>
         </View>
 
-        <View style={{marginTop: 83}}>
+        <View style={{marginTop: 80}}>
           <TimeSlots
             timeSlots={this.state.timeSlots}
             selectTimeHandler={this.selectTimeHandler}

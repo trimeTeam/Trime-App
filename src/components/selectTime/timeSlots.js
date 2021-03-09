@@ -2,6 +2,10 @@ import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import TimeSlot from '../atoms/timeSlot';
 
+let customFonts = {
+  'OpenSans-Bold': require('../../assets/fonts/OpenSans-Bold.ttf'),
+};
+
 const timeSlots = (props) => {
     const timeSlots = props.timeSlots.map((time) => {
         return (
@@ -19,7 +23,7 @@ const timeSlots = (props) => {
     return (
       <View>
         <Text style={{fontSize: 18,
-        fontWeight: 'bold', marginBottom: 30}}>{props.children}</Text>
+        fontFamily: 'OpenSans-Bold', marginBottom: 30}}>{props.children}</Text>
             <View style={{
                 flexDirection: 'row',
                 flexWrap: 'wrap',

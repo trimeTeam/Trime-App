@@ -8,6 +8,12 @@ import {
 } from 'react-native';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 
+let customFonts = {
+  'OpenSans-Bold': require('../../assets/fonts/OpenSans-Bold.ttf'),
+  'OpenSans-Light': require('../../assets/fonts/OpenSans-Light.ttf'),
+  'OpenSans-Regular': require('../../assets/fonts/OpenSans-Regular.ttf'),
+};
+
 export default class TrainerCalendar extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +22,6 @@ export default class TrainerCalendar extends Component {
       markedDates: {
         [new Date().toISOString().slice(0, 10)]: {
           selected: true,
-          marked: true,
           selectedColor: 'black',
         },
       },
@@ -24,7 +29,7 @@ export default class TrainerCalendar extends Component {
   }
 
   datePickHandler = (day) => {
-    this.setState({ markedDates: { [day.dateString]: { selected: true, marked: true, selectedColor: 'black' }}
+    this.setState({ markedDates: { [day.dateString]: { selected: true, selectedColor: 'black' }}
     });
   };
 
@@ -56,12 +61,9 @@ export default class TrainerCalendar extends Component {
               disabledArrowColor: '#d9e1e8',
               monthTextColor: 'black',
               indicatorColor: 'black',
-/*               textDayFontFamily: 'Open Sans',
-            textMonthFontFamily: 'Open Sans',
-            textDayHeaderFontFamily: 'Open Sans',  */
-              textDayFontWeight: '400',
-              textMonthFontWeight: 'bold',
-              textDayHeaderFontWeight: '300',
+            textDayFontFamily: 'OpenSans-Regular',
+            textMonthFontFamily: 'OpenSans-Bold',
+            textDayHeaderFontFamily: 'OpenSans-Light',  
               textDayFontSize: 18,
               textMonthFontSize: 26,
               textDayHeaderFontSize: 14,

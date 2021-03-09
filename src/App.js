@@ -8,21 +8,40 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 
-import popup from './containers/popup';
-import filter from './containers/filter';
+import Popup from './containers/popup';
+import Filter from './containers/filter';
 
-import trainerPicker from './containers/trainerPicker';
-import signIn from './containers/signIn';
+import TrainerPicker from './containers/trainerPicker';
+import SignIn from './containers/signIn';
+import Payment from './containers/payment';
 import GetStarted from './containers/getStarted';
 import SelectDate from './containers/selectDate';
 import SelectTime from './containers/selectTime';
-import orderDetail from './components/orderDetail/orderDetail';
+import BookingConfirmed from './containers/bookingConfirmed';
+
+import { useFonts } from '@expo-google-fonts/open-sans';
+
+let customFonts = {
+  'OpenSans-Bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+};
+import OrderDetail from './components/orderDetail/orderDetail';
 
 
 
 const Stack = createStackNavigator();
 
 export default function App() {
+    let [fontsLoaded] = useFonts({
+      'OpenSans-Bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+      'OpenSans-ExtraBold': require('./assets/fonts/OpenSans-ExtraBold.ttf'),
+      'OpenSans-Regular': require('./assets/fonts/OpenSans-Regular.ttf'),
+      'OpenSans-SemiBold': require('./assets/fonts/OpenSans-SemiBold.ttf'),
+      'OpenSans-Light': require('./assets/fonts/OpenSans-Light.ttf'),
+    });
+
+    if (!fontsLoaded) {
+      return 'Font not found';
+    }
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -31,16 +50,17 @@ export default function App() {
           name="Get Started"
           component={GetStarted}
         />
-        <Stack.Screen name="Trainer Picker" component={trainerPicker} />
+
+        <Stack.Screen name="Trainer Picker" component={TrainerPicker} />
         <Stack.Screen
           options={{ headerShown: false }}
           name="Popup"
-          component={popup}
+          component={Popup}
         />
         <Stack.Screen
           options={{ headerShown: false }}
           name="Filter"
-          component={filter}
+          component={Filter}
         />
         <Stack.Screen
           name="Select Date"
@@ -52,7 +72,7 @@ export default function App() {
               height: 128,
             },
             headerTitleStyle: {
-              fontWeight: 'bold',
+              fontFamily: 'OpenSans-Bold',
               fontSize: 18,
               marginTop: 50,
             },
@@ -69,15 +89,22 @@ export default function App() {
               height: 128,
             },
             headerTitleStyle: {
-              fontWeight: 'bold',
+              fontFamily: 'OpenSans-Bold',
               fontSize: 18,
               marginTop: 50,
             },
             headerTitleAlign: 'center',
           }}
         />
-        <Stack.Screen name="Sign In" component={signIn} />
-        <Stack.Screen name="Order Detail" component={orderDetail} />
+        <Stack.Screen name="Sign In" component={SignIn} />
+        <Stack.Screen name="Order Detail" component={OrderDetail} />
+        <Stack.Screen name="Payment" component={Payment} />
+        <Stack.Screen
+          name="Booking Confirmed"
+          component={BookingConfirmed}
+          options={{ headerShown: false }}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -90,4 +117,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-}); 
+});

@@ -1,6 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('screen');
+
+let customFonts = {
+  'OpenSans-Regular': require('../../assets/fonts/OpenSans-Regular.ttf'),
+};
 
 export default function splashScreen() {
 
@@ -28,10 +34,9 @@ export default function splashScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    fontFamily: 'Open Sans',
     alignItems: 'center',
-    height: 812,
-    width: 375,
+    height: height,
+    width: width,
     textAlign: 'center',
   },
   logo: {
@@ -44,10 +49,12 @@ const styles = StyleSheet.create({
     height: 200,
   },
   quote: {
+    fontFamily: 'OpenSans-Regular',
     marginTop: 213,
     fontSize: 18,
   },
   author: {
+    fontFamily: 'OpenSans-Regular',
     marginTop: 14,
     fontSize: 14,
   },
