@@ -19,12 +19,12 @@ export default function signIn({navigation}) {
       <TextInput style={styles.textInput} placeholder='Select a Password'/>
     </View>
       
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Order Detail')}>
         <Text style={styles.buttonText}>Create Account</Text>
       </TouchableOpacity>
       
-      <TouchableOpacity style={styles.buttonGuest}>
-        <Text style={styles.buttonText}>Create Account</Text>
+      <TouchableOpacity style={styles.buttonGuest} onPress={()=>navigation.navigate('Order Detail')}>
+        <Text style={styles.buttonText}>Continue as Guest</Text>
       </TouchableOpacity>
 
       <Text style={styles.seperatorText}>OR</Text>
