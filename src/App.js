@@ -16,6 +16,13 @@ import signIn from './containers/signIn';
 import GetStarted from './containers/getStarted';
 import SelectDate from './containers/selectDate';
 import SelectTime from './containers/selectTime';
+import bookingConfirmed from './containers/bookingConfirmed';
+
+import { useFonts } from '@expo-google-fonts/open-sans';
+
+let customFonts = {
+  'OpenSans-Bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+};
 import orderDetail from './components/orderDetail/orderDetail';
 
 
@@ -23,6 +30,17 @@ import orderDetail from './components/orderDetail/orderDetail';
 const Stack = createStackNavigator();
 
 export default function App() {
+    let [fontsLoaded] = useFonts({
+      'OpenSans-Bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+      'OpenSans-ExtraBold': require('./assets/fonts/OpenSans-ExtraBold.ttf'),
+      'OpenSans-Regular': require('./assets/fonts/OpenSans-Regular.ttf'),
+      'OpenSans-SemiBold': require('./assets/fonts/OpenSans-SemiBold.ttf'),
+      'OpenSans-Light': require('./assets/fonts/OpenSans-Light.ttf'),
+    });
+
+    if (!fontsLoaded) {
+      return 'Font not found';
+    }
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -52,7 +70,7 @@ export default function App() {
               height: 128,
             },
             headerTitleStyle: {
-              fontWeight: 'bold',
+              fontFamily: 'OpenSans-Bold',
               fontSize: 18,
               marginTop: 50,
             },
@@ -69,7 +87,7 @@ export default function App() {
               height: 128,
             },
             headerTitleStyle: {
-              fontWeight: 'bold',
+              fontFamily: 'OpenSans-Bold',
               fontSize: 18,
               marginTop: 50,
             },
@@ -78,6 +96,11 @@ export default function App() {
         />
         <Stack.Screen name="Sign In" component={signIn} />
         <Stack.Screen name="Order Detail" component={orderDetail} />
+        <Stack.Screen
+          name="Booking Confirmed"
+          component={bookingConfirmed}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

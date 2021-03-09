@@ -1,6 +1,10 @@
 import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 
+let customFonts = {
+  'OpenSans-SemiBold': require('../../assets/fonts/OpenSans-SemiBold.ttf'),
+};
+
 const timeSlot = (props) => {
 
   return (
@@ -22,7 +26,7 @@ const timeSlot = (props) => {
         <Text
           style={{
             fontSize: 14,
-            fontWeight: 600,
+            fontFamily: 'OpenSans-SemiBold',
             color: props.selected ? 'white' : 'black',
           }}
         >

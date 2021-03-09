@@ -1,6 +1,10 @@
 import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 
+let customFonts = {
+  'OpenSans-SemiBold': require('../../assets/fonts/OpenSans-SemiBold.ttf'),
+};
+
 const primaryButton = (props) => {
     const marginTop = props.marginTop;
 
@@ -20,7 +24,7 @@ const primaryButton = (props) => {
           onPress={props.btnHandler}
         >
           <Text
-            style={{ fontSize: 18, fontWeight: 600, color: [props.textColor]}}
+            style={{ fontFamily: 'OpenSans-SemiBold', fontSize: 18, color: [props.textColor]}}
           >
             {props.children}
           </Text>

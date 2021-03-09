@@ -1,8 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, Dimensions } from 'react-native';
 
 import GetStartedButton from './getStartedBtn';
+
+const { width, height } = Dimensions.get('screen');
+
+let customFonts = {
+  'OpenSans-Regular': require('../../assets/fonts/OpenSans-Regular.ttf'),
+  'OpenSans-Bold': require('../../assets/fonts/OpenSans-Bold.ttf'),
+};
 
 export default function trainerTrainee(props) {
   return (
@@ -36,18 +43,19 @@ export default function trainerTrainee(props) {
 
 const styles = StyleSheet.create({
   container: {
-    fontFamily: 'Open Sans',
-    height: 812,
+    height: height,
+    width: width,
     backgroundColor: '#FDB339',
     alignItems: 'center',
     textAlign: 'center',
   },
   header: {
     fontSize: 28,
-    fontWeight: 'bold',
-    marginTop: 111,
+    fontFamily: 'OpenSans-Bold',
+    marginTop: 110,
   },
   introText: {
+    fontFamily: 'OpenSans-Regular',
     fontSize: 18,
     marginTop: 12,
   },
@@ -59,19 +67,21 @@ const styles = StyleSheet.create({
   imageContainer: {
     flexDirection: 'row',
     alignItems: 'flex-end',
-    marginTop: 50,
+    marginTop: 30,
   },
   trainee: {
     width: 75,
     height: 136,
-    },
+  },
   signInUp: {
-    fontWeight: 'bold',
+    fontFamily: 'OpenSans-Bold',
   },
   bottomLink1: {
+    fontFamily: 'OpenSans-Regular',
     marginTop: 13,
   },
   bottomLink2: {
+    fontFamily: 'OpenSans-Regular',
     marginTop: 17,
   },
 });
