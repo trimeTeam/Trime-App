@@ -8,11 +8,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 
-import popup from './containers/popup';
-import filter from './containers/filter';
+import Popup from './containers/popup';
+import Filter from './containers/filter';
 
-import trainerPicker from './containers/trainerPicker';
-import signIn from './containers/signIn';
+import TrainerPicker from './containers/trainerPicker';
+import SignIn from './containers/signIn';
+import Payment from './containers/payment';
 import GetStarted from './containers/getStarted';
 import SelectDate from './containers/selectDate';
 
@@ -28,11 +29,12 @@ export default function App() {
           name="Get Started"
           component={GetStarted}
         />
-        <Stack.Screen name="Trainer Picker" component={trainerPicker} />
-        <Stack.Screen options={{ headerShown: false }} name="Popup" component={popup} />
-        <Stack.Screen options={{ headerShown: false }} name="Filter" component={filter} />
+        <Stack.Screen name="Trainer Picker" component={TrainerPicker} />
+        <Stack.Screen options={{ headerShown: false }} name="Popup" component={Popup} />
+        <Stack.Screen options={{ headerShown: false }} name="Filter" component={Filter} />
         <Stack.Screen name="Select Date" component={SelectDate} />
-        <Stack.Screen name="Sign In" component={signIn} />
+        <Stack.Screen name="Sign In" component={SignIn} />
+        <Stack.Screen name="Payment" component={Payment} />
       </Stack.Navigator>
     </NavigationContainer>
 
