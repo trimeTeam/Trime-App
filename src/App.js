@@ -16,6 +16,9 @@ import signIn from './containers/signIn';
 import GetStarted from './containers/getStarted';
 import SelectDate from './containers/selectDate';
 import SelectTime from './containers/selectTime';
+import orderDetail from './components/orderDetail/orderDetail';
+
+
 
 const Stack = createStackNavigator();
 
@@ -74,6 +77,7 @@ export default function App() {
           }}
         />
         <Stack.Screen name="Sign In" component={signIn} />
+        <Stack.Screen name="Order Detail" component={orderDetail} />
       </Stack.Navigator>
     </NavigationContainer>
   );
