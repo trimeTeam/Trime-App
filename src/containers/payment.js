@@ -42,6 +42,7 @@ export default function Payment({ navigation }) {
                     <TextInput 
                         style={styles.cardNoInput} 
                         placeholder='**** **** **** ****' 
+                        keyboardType = 'numeric'
                         maxLength={19} value={cardNumber} 
                         onChangeText={(value) => setCardNumber(value)}
                     />
@@ -54,6 +55,7 @@ export default function Payment({ navigation }) {
                         <TextInput 
                             style={styles.inputFields} 
                             placeholder='MM/YY' 
+                            keyboardType = 'numeric'
                             maxLength={5} 
                             value={validUntil} 
                             onChangeText={(value) => setValidUntil(value)}
@@ -65,6 +67,7 @@ export default function Payment({ navigation }) {
                         <TextInput 
                             style={styles.inputFields} 
                             placeholder='000' 
+                            keyboardType = 'numeric'
                             maxLength={3} 
                             value={cvv} 
                             onChangeText={(value) => setCvv(value)}
