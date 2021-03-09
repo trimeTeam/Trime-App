@@ -7,6 +7,10 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+
+import popup from './containers/popup';
+import filter from './containers/filter';
+
 import trainerPicker from './containers/trainerPicker';
 import signIn from './containers/signIn';
 import GetStarted from './containers/getStarted';
@@ -16,7 +20,6 @@ import SelectTime from './containers/selectTime';
 const Stack = createStackNavigator();
 
 export default function App() {
-  
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -75,7 +78,6 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
