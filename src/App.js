@@ -15,6 +15,7 @@ import trainerPicker from './containers/trainerPicker';
 import signIn from './containers/signIn';
 import GetStarted from './containers/getStarted';
 import SelectDate from './containers/selectDate';
+import orderDetail from './components/orderDetail/orderDetail';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,7 @@ export default function App() {
 
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="Order Detail" component={orderDetail} />
         <Stack.Screen
           options={{ headerShown: false }}
           name="Get Started"
