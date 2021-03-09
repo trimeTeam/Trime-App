@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
+import { CheckBox } from 'react-native-elements'
 
 const {width, height} = Dimensions.get('screen')
 
@@ -16,22 +17,8 @@ export default function Payment({ navigation }) {
     const [validUntil, setValidUntil] = useState('')
     const [cvv, setCvv] = useState('')
     const [name, setName] = useState('')
+    const [saveCard, setSaveCard] = useState(false)
 
-    function handleCardNoInput (value) {
-        setCardNumber(value)
-    }
-
-    function handleValidUntilInput (value) {
-        setValidUntil(value)
-    }
-
-    function handleCvvInput (value) {
-        setCvv(value)
-    }
-
-    function handleNameInput (value) {
-        setName(value)
-    }
 
     useEffect(() => {
         if (cardNumber.length === 4 || cardNumber.length === 9 || cardNumber.length === 14) {
@@ -44,29 +31,68 @@ export default function Payment({ navigation }) {
 
     }, [cardNumber, validUntil])
 
+
     return (
         <SafeAreaView >
             <View style={styles.container}>
+
                 <Text style={styles.bold}>Card Number</Text>
                 <View style={styles.cardNoInputContainer}>
                     <Icon name='cc-visa' size={28}/>
-                    <TextInput style={styles.cardNoInput} placeholder='**** **** **** ****' maxLength={19} value={cardNumber} onChangeText={handleCardNoInput}/>
+                    <TextInput 
+                        style={styles.cardNoInput} 
+                        placeholder='**** **** **** ****' 
+                        maxLength={19} value={cardNumber} 
+                        onChangeText={(value) => setCardNumber(value)}
+                    />
                 </View>
+
                 <View style={styles.validationAndCVVContainer}>
+                    
                     <Text>
                         <Text style={styles.bold}>Valid until</Text>
-                        <TextInput style={styles.inputFields} placeholder='MM/YY' maxLength={5} value={validUntil} onChangeText={handleValidUntilInput}/>
+                        <TextInput 
+                            style={styles.inputFields} 
+                            placeholder='MM/YY' 
+                            maxLength={5} 
+                            value={validUntil} 
+                            onChangeText={(value) => setValidUntil(value)}
+                        />
                     </Text>
+
                     <Text>
                         <Text style={styles.bold}>CVV</Text>
-                        <TextInput style={styles.inputFields} placeholder='000' maxLength={3} value={cvv} onChangeText={handleCvvInput}/>
+                        <TextInput 
+                            style={styles.inputFields} 
+                            placeholder='000' 
+                            maxLength={3} 
+                            value={cvv} 
+                            onChangeText={(value) => setCvv(value)}
+                        />
                     </Text>
-                    <Text style={styles.small}>The last three digits on the back of the card</Text>
-                </View>
-                    <Text style={styles.bold}>Card holder</Text>
-                    <TextInput style={styles.nameInput} placeholder='Name Namesson' value={name} onChangeText={handleNameInput}/>
 
-                <Text style={styles.small}>Save card data for future payments</Text>
+                    <Text style={styles.small}>The last three digits on the back of the card</Text>
+
+                </View>
+                
+                <Text style={styles.bold}>Card holder</Text>
+                <TextInput 
+                    style={styles.nameInput} 
+                    placeholder='Name Namesson' 
+                    value={name} 
+                    onChangeText={(value) => setName(value)}
+                />
+
+                <CheckBox 
+                    title='Save card data for future payments'
+                    containerStyle={styles.saveCard}
+                    textStyle={styles.saveCardText}
+                    checked={saveCard}
+                    checkedIcon='check-square'
+                    checkedColor='#000'
+                    size={30}
+                    onPress={()=> setSaveCard(!saveCard)}
+                />
 
                 <TouchableOpacity style={styles.payBtn} onPress={()=> navigation.navigate('Booking Confirmed')}>
                     <Text style={styles.btnText}>Pay</Text>
@@ -121,6 +147,15 @@ const styles = StyleSheet.create({
         borderBottomColor: 'grey',
         borderBottomWidth: 1,
         marginBottom: 30
+    },
+    saveCard: {
+        backgroundColor: '#FFF',
+        paddingHorizontal: 0,
+        margin: 0,
+        border: 'none',
+    },
+    saveCardText: {
+        fontWeight: 'normal'
     },
     btnText: {
         fontSize: 18,

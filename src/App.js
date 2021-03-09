@@ -24,7 +24,7 @@ export default function App() {
 
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/* <Stack.Screen
           options={{ headerShown: false }}
           name="Get Started"
           component={GetStarted}
@@ -33,7 +33,7 @@ export default function App() {
         <Stack.Screen options={{ headerShown: false }} name="Popup" component={Popup} />
         <Stack.Screen options={{ headerShown: false }} name="Filter" component={Filter} />
         <Stack.Screen name="Select Date" component={SelectDate} />
-        <Stack.Screen name="Sign In" component={SignIn} />
+        <Stack.Screen name="Sign In" component={SignIn} /> */}
         <Stack.Screen name="Payment" component={Payment} />
       </Stack.Navigator>
     </NavigationContainer>
