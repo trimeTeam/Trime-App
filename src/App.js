@@ -96,8 +96,39 @@ export default function App() {
             headerTitleAlign: 'center',
           }}
         />
-              <Stack.Screen name="Sign In" component={SignIn} />
-        <Stack.Screen name="Order Detail" component={OrderDetail} />
+        <Stack.Screen 
+              name="Sign In" 
+              component={SignIn} 
+              options={{
+                title: 'Sign In',
+                headerStyle: {
+                  backgroundColor: '#FDB339',
+                  height: 128,
+                },
+                headerTitleStyle: {
+                  fontFamily: 'OpenSans-Bold',
+                  fontSize: 18,
+                  marginTop: 50,
+                },
+                headerTitleAlign: 'center',
+              }} />
+        <Stack.Screen 
+          name="Order Detail" 
+          component={OrderDetail}
+          options={{
+            title: 'Order Detail',
+            headerStyle: {
+              backgroundColor: '#FDB339',
+              height: 128,
+            },
+            headerTitleStyle: {
+              fontFamily: 'OpenSans-Bold',
+              fontSize: 18,
+              marginTop: 50,
+            },
+            headerTitleAlign: 'center',
+          }}
+       />
         <Stack.Screen name="Payment" component={Payment} />
         <Stack.Screen
           name="Booking Confirmed"

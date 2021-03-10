@@ -7,7 +7,7 @@ const {width, height} = Dimensions.get('screen')
 
 export default function signIn({navigation}) {
   return (
-<View>
+<View style={{fontFamily: 'Open Sans'}}>
     <View style={styles.introContainer}>
         <Text style={styles.introText}>For a personalized experience, sign up</Text>
       </View>
