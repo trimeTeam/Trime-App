@@ -102,6 +102,9 @@ export default function App() {
           component={Payment}
           options={yellowHeader}
         />
+        <Stack.Screen name="Sign In" component={SignIn} />
+        <Stack.Screen name="Order Detail" component={OrderDetail} />
+        <Stack.Screen name="Payment" component={Payment} />
         <Stack.Screen
           name="Booking Confirmed"
           component={BookingConfirmed}
