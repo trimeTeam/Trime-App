@@ -29,12 +29,16 @@ export default class GetStarted extends Component {
         this.props.navigation.navigate('Trainer Picker');
     }
 
+    goToSignIn = () => {
+        this.props.navigation.navigate('Sign In');
+    }
+
    
     render() {  
          return(  
              <View>  
                  {this.state.isVisible === true ? <SplashScreen></SplashScreen> :
-                     <TrainerTraineeRound getStartedBtn={this.goToTrainerPicker}></TrainerTraineeRound>}  
+                     <TrainerTraineeRound getStartedBtn={this.goToTrainerPicker} signIn={this.goToSignIn}></TrainerTraineeRound>}  
             </View>  
         );  
     }  

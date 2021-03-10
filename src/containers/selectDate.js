@@ -22,7 +22,6 @@ export default class SelectDate extends Component {
     return (
       <View
         style={{
-          fontFamily: 'Open Sans',
           flex: 1,
           backgroundColor: 'white',
           textAlign: 'center',

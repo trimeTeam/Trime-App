@@ -35,7 +35,7 @@ export default function trainerTrainee(props) {
         <Text style={styles.signInUp}>Sign up here</Text>
       </Text>
       <Text style={styles.bottomLink2}>
-        Already have an account? <Text style={styles.signInUp}>Sign in</Text>
+        Already have an account? <Text style={styles.signInUp} onPress={props.signIn}>Sign in</Text>
       </Text>
     </View>
   );
