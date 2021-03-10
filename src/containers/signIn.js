@@ -25,13 +25,16 @@ export default function signIn({navigation}) {
       <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Order Detail')}>
         <Text style={styles.buttonText}>Create Account</Text>
       </TouchableOpacity>
-      
-      <TouchableOpacity style={styles.buttonGuest} onPress={()=>navigation.navigate('Order Detail')}>
+
+      <TouchableOpacity
+        style={styles.buttonGuest}
+        onPress={() => navigation.navigate('Session Details')}
+      >
         <Text style={styles.buttonText}>Continue as Guest</Text>
       </TouchableOpacity>
 
       <Text style={styles.seperatorText}>OR</Text>
-      
+
       <TouchableOpacity style={styles.fbButton}>
         <View style={styles.icon}>
           <Text style={{color:'white'}} >
@@ -40,7 +43,7 @@ export default function signIn({navigation}) {
         </View>
         <Text style={styles.socialButtonText}>Sign in with Facebook</Text>
       </TouchableOpacity>
-      
+
       <TouchableOpacity style={styles.googleButton}>
         <View style={styles.icon}>
           <Text style={{color:'white'}} >
@@ -49,7 +52,7 @@ export default function signIn({navigation}) {
         </View>
         <Text style={styles.socialButtonText}>Sign in with Google</Text>
       </TouchableOpacity>
-      
+
       <TouchableOpacity style={styles.twitterButton}>
         <View style={styles.icon}>
           <Text style={{color:'white'}} >
