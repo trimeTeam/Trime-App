@@ -1,23 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Button, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { SafeAreaView, Button, StyleSheet, Text, View, TextInput, TouchableOpacity, Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+
+const {width, height} = Dimensions.get('screen')
 
 export default function signIn({navigation}) {
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <View style={styles.introContainer}>
-      <Text style={styles.introText}>For a personalized experience, sign up</Text>
+<View>
+    <View style={styles.introContainer}>
+        <Text style={styles.introText}>For a personalized experience, sign up</Text>
       </View>
-
-    <View>
-      <Text style={styles.inputHeading}>Email</Text>
-      <TextInput style={styles.textInput} placeholder='Enter Your Email'/>
+  <View style={styles.container}>
       
-      <Text style={styles.inputHeading}>Password</Text>
-      <TextInput style={styles.textInput} placeholder='Select a Password'/>
-    </View>
+
+      <View style={styles.input}>
+        <Text style={styles.inputHeading}>Email</Text>
+        <TextInput style={styles.textInput} placeholder='Enter Your Email'/>
+        
+        <Text style={styles.inputHeading}>Password</Text>
+        <TextInput style={styles.textInput} placeholder='Select a Password'/>
+      </View>
       
       <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Order Detail')}>
         <Text style={styles.buttonText}>Create Account</Text>
@@ -30,32 +33,33 @@ export default function signIn({navigation}) {
       <Text style={styles.seperatorText}>OR</Text>
       
       <TouchableOpacity style={styles.fbButton}>
-          <View style={styles.icon}>
+        <View style={styles.icon}>
           <Text style={{color:'white'}} >
-        <Icon size={40} name='facebook-square' />
-        </Text>
+            <Icon size={40} name='facebook-square' />
+          </Text>
         </View>
         <Text style={styles.socialButtonText}>Sign in with Facebook</Text>
       </TouchableOpacity>
       
       <TouchableOpacity style={styles.googleButton}>
-      <View style={styles.icon}>
-      <Text style={{color:'white'}} >
-        <Icon size={40} name='google-plus-square' />
-        </Text>
+        <View style={styles.icon}>
+          <Text style={{color:'white'}} >
+            <Icon size={40} name='google-plus-square' />
+          </Text>
         </View>
         <Text style={styles.socialButtonText}>Sign in with Google</Text>
       </TouchableOpacity>
       
       <TouchableOpacity style={styles.twitterButton}>
-      <View style={styles.icon}>
-      <Text style={{color:'white'}} >
-          <Icon name= 'twitter-square' size={40} />
-        </Text>
+        <View style={styles.icon}>
+          <Text style={{color:'white'}} >
+            <Icon name= 'twitter-square' size={40} />
+          </Text>
         </View>
         <Text style={styles.socialButtonText}>Sign in with Twitter</Text>
       </TouchableOpacity>
-    </View>
+  </View>
+  </View>
   );
 }
 
@@ -64,7 +68,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    
+    height: height,
+    width: width,  
+    padding: 10  
     // justifyContent: 'center',
   },
 
@@ -81,11 +87,13 @@ const styles = StyleSheet.create({
 
   textInput: {
     height: 40, 
-    width:400,
+alignSelf: 'stretch',
     borderBottomColor: 'gray', 
     borderBottomWidth: 2,
   },
-  
+  input: {
+    alignSelf: 'stretch'
+  },
   inputHeading: {
     fontSize: 14,
     marginTop: 40,
@@ -96,7 +104,8 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 40,
-    width:400,
+    alignSelf: 'stretch',
+    // width:400,
     height: 50,
     backgroundColor: '#FDB339',
     borderRadius: 50,
@@ -112,7 +121,7 @@ const styles = StyleSheet.create({
 
   buttonGuest: {
     marginTop: 20,
-    width:400,
+    alignSelf:'stretch',
     height: 50,
     backgroundColor: '#F6F6F6',
     borderRadius: 50,
@@ -122,7 +131,7 @@ const styles = StyleSheet.create({
 
   fbButton:{
     flexDirection:'row',
-    width:400,
+  alignSelf:'stretch',
     backgroundColor: '#3B5998',
     alignItems: 'center',
     borderColor: 'black',
@@ -149,7 +158,7 @@ const styles = StyleSheet.create({
   googleButton:{
     flexDirection:'row',
     marginTop: 10,
-    width:400,
+    alignSelf:'stretch',
     backgroundColor: '#DD4B39',
     alignItems: 'center',
     borderWidth: 0,
@@ -161,7 +170,7 @@ const styles = StyleSheet.create({
   twitterButton: {
     flexDirection:'row',
     marginTop: 10,
-    width:400,
+    alignSelf:'stretch',
     backgroundColor: '#55ACEE',
     alignItems: 'center',
     borderColor: 'black',

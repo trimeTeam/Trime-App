@@ -96,7 +96,7 @@ export default function App() {
             headerTitleAlign: 'center',
           }}
         />
-        <Stack.Screen name="Sign In" component={SignIn} />
+              <Stack.Screen name="Sign In" component={SignIn} />
         <Stack.Screen name="Order Detail" component={OrderDetail} />
         <Stack.Screen name="Payment" component={Payment} />
         <Stack.Screen
