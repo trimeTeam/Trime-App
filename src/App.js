@@ -42,6 +42,21 @@ export default function App() {
     if (!fontsLoaded) {
       return 'Font not found';
     }
+  
+  
+  const yellowHeader = {
+    headerStyle: {
+      backgroundColor: '#FDB339',
+      height: 128,
+    },
+    headerTitleStyle: {
+      fontFamily: 'OpenSans-Bold',
+      fontSize: 18,
+      marginTop: 50,
+    },
+    headerTitleAlign: 'center',
+  };
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -65,46 +80,33 @@ export default function App() {
         <Stack.Screen
           name="Select Date"
           component={SelectDate}
-          options={{
-            title: 'Select Date',
-            headerStyle: {
-              backgroundColor: '#FDB339',
-              height: 128,
-            },
-            headerTitleStyle: {
-              fontFamily: 'OpenSans-Bold',
-              fontSize: 18,
-              marginTop: 50,
-            },
-            headerTitleAlign: 'center',
-          }}
+          options={yellowHeader}
         />
         <Stack.Screen
           name="Select Time"
           component={SelectTime}
-          options={{
-            title: 'Select Timeslot',
-            headerStyle: {
-              backgroundColor: '#FDB339',
-              height: 128,
-            },
-            headerTitleStyle: {
-              fontFamily: 'OpenSans-Bold',
-              fontSize: 18,
-              marginTop: 50,
-            },
-            headerTitleAlign: 'center',
-          }}
+          options={yellowHeader}
         />
-        <Stack.Screen name="Sign In" component={SignIn} />
-        <Stack.Screen name="Order Detail" component={OrderDetail} />
-        <Stack.Screen name="Payment" component={Payment} />
+        <Stack.Screen
+          name="Sign In"
+          component={SignIn}
+          options={yellowHeader}
+        />
+        <Stack.Screen
+          name="Session Details"
+          component={OrderDetail}
+          options={yellowHeader}
+        />
+        <Stack.Screen
+          name="Payment"
+          component={Payment}
+          options={yellowHeader}
+        />
         <Stack.Screen
           name="Booking Confirmed"
           component={BookingConfirmed}
           options={{ headerShown: false }}
         />
-
       </Stack.Navigator>
     </NavigationContainer>
   );

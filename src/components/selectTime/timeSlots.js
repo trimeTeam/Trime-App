@@ -1,5 +1,7 @@
 import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import TimeSlot from '../atoms/timeSlot';
 
 let customFonts = {
@@ -22,13 +24,38 @@ const timeSlots = (props) => {
 
     return (
       <View>
-        <Text style={{fontSize: 18,
-        fontFamily: 'OpenSans-Bold', marginBottom: 30}}>{props.children}</Text>
-            <View style={{
-                flexDirection: 'row',
-                flexWrap: 'wrap',
-                justifyContent: 'center'
-            }}>{timeSlots}</View>
+        <View style={{ flexDirection: 'row', width: 230, alignSelf: 'center', justifyContent: 'space-between' }}>
+          <Icon
+            name="chevron-left"
+            size={25}
+            color="black"
+          />
+          <Text
+            style={{
+              fontSize: 18,
+              fontFamily: 'OpenSans-Bold',
+              marginBottom: 30,
+              marginRight: 10,
+              marginLeft: 10,
+            }}
+          >
+            {props.children}
+          </Text>
+          <Icon
+            name="chevron-right"
+            size={25}
+            color="black"
+          />
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+          }}
+        >
+          {timeSlots}
+        </View>
       </View>
     );
 };

@@ -8,50 +8,58 @@ export default function signIn({navigation}) {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <View style={styles.introContainer}>
-      <Text style={styles.introText}>For a personalized experience, sign up</Text>
+        <Text style={styles.introText}>
+          For a personalized experience, sign up
+        </Text>
       </View>
 
-    <View>
-      <Text style={styles.inputHeading}>Email</Text>
-      <TextInput style={styles.textInput} placeholder='Enter Your Email'/>
-      
-      <Text style={styles.inputHeading}>Password</Text>
-      <TextInput style={styles.textInput} placeholder='Select a Password'/>
-    </View>
-      
-      <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Order Detail')}>
+      <View>
+        <Text style={styles.inputHeading}>Email</Text>
+        <TextInput style={styles.textInput} placeholder="Enter Your Email" />
+
+        <Text style={styles.inputHeading}>Password</Text>
+        <TextInput style={styles.textInput} placeholder="Select a Password" />
+      </View>
+
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('Session Details')}
+      >
         <Text style={styles.buttonText}>Create Account</Text>
       </TouchableOpacity>
-      
-      <TouchableOpacity style={styles.buttonGuest} onPress={()=>navigation.navigate('Order Detail')}>
+
+      <TouchableOpacity
+        style={styles.buttonGuest}
+        onPress={() => navigation.navigate('Session Details')}
+      >
         <Text style={styles.buttonText}>Continue as Guest</Text>
       </TouchableOpacity>
 
       <Text style={styles.seperatorText}>OR</Text>
-      
+
       <TouchableOpacity style={styles.fbButton}>
-          <View style={styles.icon}>
-          <Text style={{color:'white'}} >
-        <Icon size={40} name='facebook-square' />
-        </Text>
+        <View style={styles.icon}>
+          <Text style={{ color: 'white' }}>
+            <Icon size={40} name="facebook-square" />
+          </Text>
         </View>
         <Text style={styles.socialButtonText}>Sign in with Facebook</Text>
       </TouchableOpacity>
-      
+
       <TouchableOpacity style={styles.googleButton}>
-      <View style={styles.icon}>
-      <Text style={{color:'white'}} >
-        <Icon size={40} name='google-plus-square' />
-        </Text>
+        <View style={styles.icon}>
+          <Text style={{ color: 'white' }}>
+            <Icon size={40} name="google-plus-square" />
+          </Text>
         </View>
         <Text style={styles.socialButtonText}>Sign in with Google</Text>
       </TouchableOpacity>
-      
+
       <TouchableOpacity style={styles.twitterButton}>
-      <View style={styles.icon}>
-      <Text style={{color:'white'}} >
-          <Icon name= 'twitter-square' size={40} />
-        </Text>
+        <View style={styles.icon}>
+          <Text style={{ color: 'white' }}>
+            <Icon name="twitter-square" size={40} />
+          </Text>
         </View>
         <Text style={styles.socialButtonText}>Sign in with Twitter</Text>
       </TouchableOpacity>
