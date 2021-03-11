@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     },
     btnText: {
         fontSize: 18,
-        fontFamily: 'OpenSans-Bold',
+        fontFamily: 'OpenSans-SemiBold',
         alignSelf: 'center'
     },
     payBtn: {

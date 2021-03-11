@@ -4,6 +4,8 @@ import PrimaryButton from '../components/atoms/primaryButton';
 import TimeSlots from '../components/selectTime/timeSlots';
 
 export default class SelectTime extends Component {
+  
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -111,11 +113,12 @@ export default class SelectTime extends Component {
           id: 20
         },
       ],
+      clickedTime: '17:00'
     };
   }
 
   btnHandlerSave = () => {
-    this.props.navigation.navigate('Sign In');
+    this.props.navigation.navigate('Sign In', {trainer: this.props.route.params.trainer, date: this.props.route.params.date, time: this.state.clickedTime});
   };
 
   btnHandlerCancel = () => {
@@ -134,10 +137,12 @@ export default class SelectTime extends Component {
         time.selected = false;
       }));
       this.state.timeSlots[id - 6].selected = true;
+      this.state.clickedTime = this.state.timeSlots[id - 6].time
     }
   };
 
   render() {
+    
     return (
       <View
         style={{

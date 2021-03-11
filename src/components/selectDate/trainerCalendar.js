@@ -31,6 +31,7 @@ export default class TrainerCalendar extends Component {
   datePickHandler = (day) => {
     this.setState({ markedDates: { [day.dateString]: { selected: true, selectedColor: 'black' }}
     });
+    this.props.getClickedDate(day)
   };
 
   render() {

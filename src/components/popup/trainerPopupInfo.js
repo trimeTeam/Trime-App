@@ -32,10 +32,10 @@ export default function TrainerPopupInfo(props) {
             <View style={styles.weekdaysSection}>
                 <Text style={styles.bold}>Weekdays available</Text>
                 <View style={styles.weekdaysCircleContainer}>
-                    <View style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: trainer.weekdaysAvailable.includes('Tuesday') ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>T</Text></View>
-                    <View style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: trainer.weekdaysAvailable.includes('Wednesday') ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>W</Text></View>
-                    <View style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: trainer.weekdaysAvailable.includes('Thursday') ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>T</Text></View>
-                    <View style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: trainer.weekdaysAvailable.includes('Monday') ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>M</Text></View>
+                    <View style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: trainer.weekdaysAvailable.includes('Tuesday') ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>M</Text></View>
+                    <View style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: trainer.weekdaysAvailable.includes('Wednesday') ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>T</Text></View>
+                    <View style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: trainer.weekdaysAvailable.includes('Thursday') ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>W</Text></View>
+                    <View style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: trainer.weekdaysAvailable.includes('Monday') ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>T</Text></View>
                     <View style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: trainer.weekdaysAvailable.includes('Friday') ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>F</Text></View>
                     <View style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: trainer.weekdaysAvailable.includes('Saturday') ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>S</Text></View>
                     <View style={{ padding: 10, borderRadius: 100, height: 40, width: 40, textAlign: 'center', backgroundColor: trainer.weekdaysAvailable.includes('Sunday') ? '#FDB339' : '#F6F6F6' }}><Text style={styles.bold}>S</Text></View>
