@@ -3,7 +3,11 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-
+let customFonts = {
+  'OpenSans-Regular': require('../../assets/fonts/OpenSans-Regular.ttf'),
+  'OpenSans-SemiBold': require('../../assets/fonts/OpenSans-SemiBold.ttf'),
+  'OpenSans-Bold': require('../../assets/fonts/OpenSans-Bold.ttf'),
+};
 
 export default function ReviewListItem(props) {
  
@@ -18,9 +22,9 @@ export default function ReviewListItem(props) {
                 </View>
                 <View style={styles.ratingContainer}>
                     <Icon name='star' size={20} color='#FDB339'/>
-                    <Text >{props.review.review}</Text>
+                    <Text style={styles.rating}>{props.review.review}</Text>
                 </View>
-                <Text >{props.review.reviewText}</Text>  
+                <Text style={styles.regular}>{props.review.reviewText}</Text>  
                 </View>
             <Icon style={styles.rightIcon} name='chevron-right' size={25} color='grey'/>
         </View>
@@ -36,6 +40,11 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#C4C4C4'
   },
+  regular: {
+    fontFamily: 'OpenSans-Regular',
+    fontSize: 13,
+    marginTop: 4
+  },
   profileImg: {
     height: 60,
     width: 60,
@@ -50,15 +59,21 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   user: {
-    fontWeight: 700,
-    fontSize: 16
+    fontFamily: 'OpenSans-Bold',
+    fontSize: 16,
+    marginBottom: 4
   },
   date: {
+      fontFamily: 'OpenSans-Regular',
       color: '#C4C4C4',
       fontSize: 10
   },
   ratingContainer: {
       flexDirection: 'row'
+  },
+  rating: {
+    fontFamily: 'OpenSans-SemiBold',
+    marginLeft: 3
   },
   rightIcon: {
     alignSelf: 'center'

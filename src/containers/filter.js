@@ -8,7 +8,10 @@ import DatePicker from 'react-native-datepicker'
 
 import ActivitiesBar from '../components/trainerPicker/activitiesBar'
 
-
+let customFonts = {
+    'OpenSans-Bold': require('../assets/fonts/OpenSans-Bold.ttf'),
+    'OpenSans-ExtraBold': require('../assets/fonts/OpenSans-ExtraBold.ttf')
+};
 
 
 export default function Filter({ navigation }) {
@@ -86,7 +89,6 @@ export default function Filter({ navigation }) {
                         <DatePicker
                             style={{
                                 width: 150,
-
                             }}
                             mode="date"
                             placeholder="To"
@@ -135,16 +137,16 @@ const styles = StyleSheet.create({
     },
     heading: {
         fontSize: 42,
-        fontWeight: 800
+        fontFamily: 'OpenSans-ExtraBold'
     },
     underHeading: {
-        fontSize: 18,
-        fontWeight: 800,
+        fontSize: 16,
+        fontFamily: 'OpenSans-ExtraBold',
         alignSelf: 'flex-start',
         marginBottom: 10
     },
     bold: {
-        fontWeight: 700
+        fontFamily: 'OpenSans-Bold',
     },
     weekdaysCircleContainer: {
         marginTop: 15,
