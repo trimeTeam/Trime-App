@@ -15,113 +15,117 @@ let customFonts = {
 };
 
 
+
 export default function orderDetail({ route, navigation }) {
   const trainer = route.params.trainer
   const date = route.params.date
   const time = route.params.time
 
-  return (
-    <View style={styles.mainContainer}>
+  return(
+<View style={styles.mainContainer}>
 
-      <View style={styles.containerFirst}>
-        <Image style={styles.profileImg} source={{ uri: trainer.profileImg }}></Image>
-        <View style={styles.profileInfoContainer}>
-          <Text style={styles.profileTxt}>{trainer.name}</Text>
-          <Text style={{ color: '#FDB339' }}>Personal Trainer </Text>
-        </View>
-      </View>
+<View style={styles.containerFirst}>
+  <Image style = {styles.profileImg} source={{uri: trainer.profileImg }}></Image>
+  <View style={styles.profileInfoContainer}>
+    <Text style= {styles.profileTxt}>{trainer.name}</Text>
+    <Text style= {{color: '#FDB339'}}>Personal Trainer </Text>
+  </View>
+</View>
 
-      <View style={styles.containerFirst}>
-        <Text style={styles.when}>When: </Text>
-        <Text style={{ fontWeight: 'bold' }}>{date}, {time} </Text>
-      </View>
-      <View style={styles.container}>
-        <Text style={styles.when}>Length: </Text>
-        <Text style={{ fontWeight: 'bold' }}>60 Minutes</Text>
-      </View>
-      <View style={styles.container}>
-        <Text style={styles.when}>Price: </Text>
-        <Text style={{ fontWeight: 'bold' }}>SEK {trainer.costTo}</Text>
-      </View>
+  <View style={styles.containerFirst}>
+    <Text style = {styles.when}>When: </Text>
+    <Text style = {{fontWeight: 'bold'}}>{date}, {time} </Text>
+  </View>
+  <View style={styles.container}>
+    <Text style = {styles.when}>Length: </Text>
+    <Text style = {{fontWeight: 'bold'}}>60 Minutes</Text>
+  </View>
+  <View style={styles.container}>
+    <Text style = {styles.when}>Price: </Text>
+    <Text style = {{fontWeight: 'bold'}}>SEK {trainer.costTo}</Text>
+  </View>
 
-      <View style={styles.containerFirst}>
-        <Text style={styles.where}>Type: </Text>
-        <Text>Gym</Text>
-      </View>
-      <View style={styles.container}>
-        <Text style={styles.where}>Contact: </Text>
-        <Text>+46 73 506 66 97</Text>
-      </View>
-      <View style={styles.container}>
-        <Text style={styles.where}>Email: </Text>
-        <Text>{trainer.name.replace(' ', '.')}@trime.com</Text>
-      </View>
+  <View style={styles.containerFirst}>
+    <Text style = {styles.where}>Type: </Text>
+    <Text>Gym</Text>
+  </View>
+  <View style={styles.container}>
+    <Text style = {styles.where}>Contact: </Text>
+    <Text>+46 73 506 66 97</Text>
+  </View>
+  <View style={styles.container}>
+    <Text style = {styles.where}>Email: </Text>
+    <Text>{trainer.name.replace(' ', '.')}@trime.com</Text>
+  </View>
 
-      <View style={styles.containerFirst}>
-        <Text style={styles.where}>Location: </Text>
-        <Text>{trainer.address}</Text>
-      </View>
+  <View style={styles.containerFirst}>
+    <Text style = {styles.where}>Location: </Text>
+    <Text>{trainer.address}</Text>
+  </View>
 
-      <View style={styles.paymentContainerFirst}>
-        <View style={styles.payment}>
-          <Icon name='cc-visa' size={40} />
-          <Text style={styles.paymentText}>Visa</Text>
-        </View>
-        <View style={{ marginVertical: 'atuo' }}>
-          <CheckBox
-            checked='true'
-            checkedIcon='dot-circle-o'
-            uncheckedIcon='circle-o'
-            checkedColor='#FDB339'
+  <View style={styles.paymentContainerFirst}>
+    <View style={styles.payment}>
 
-          />
-        </View>
-      </View>
+        <Icon style ={styles.icon} name= 'cc-visa' size={40} />
 
-      <View style={styles.paymentContainer}>
-        <View style={styles.payment}>
-          <Icon style={styles.icon} name='cc-mastercard' size={40} />
-          <Text style={styles.paymentText}>Master</Text>
-        </View>
-        <CheckBox
-          checkedIcon='dot-circle-o'
-          uncheckedIcon='circle-o'
-        />
-      </View>
+      <Text style={styles.paymentText}>Visa</Text>
+    </View>
+    <View style={{marginVertical: 'atuo'}}>
+      <CheckBox
+      checked='true'
+        checkedIcon='dot-circle-o'
+        uncheckedIcon='circle-o'
+        checkedColor= '#FDB339'
 
+      />
+    </View>
+  </View>
 
-      <View style={styles.paymentContainer}>
-        <View style={styles.payment}>
-          <Icon style={styles.icon} name='cc-amex' size={40} />
-          <Text style={styles.paymentText}>Amex</Text>
-        </View>
-        <CheckBox
-          checkedIcon='dot-circle-o'
-          uncheckedIcon='circle-o'
-        />
-      </View>
-
-      <View style={styles.paymentContainer}>
-        <View style={styles.payment}>
-          <Icon style={styles.icon} name='apple-pay' size={40} />
-          <Text style={styles.paymentText}>Apple Pay</Text>
-        </View>
-        <CheckBox
-          checkedIcon='dot-circle-o'
-          uncheckedIcon='circle-o'
-        />
-      </View>
-
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Payment')}>
-        <Text style={styles.buttonText}>Checkout</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.buttonGuest} onPress={() => navigation.goBack()}>
-        <Text style={styles.buttonText}>Cancel</Text>
-      </TouchableOpacity>
+    <View style={styles.paymentContainer}>
+    <View style={styles.payment}>
+        <Icon style ={styles.icon} name= 'cc-mastercard' size={40} />
+        <Text style={styles.paymentText}>Master</Text>
+    </View>
+    <CheckBox
+      checkedIcon='dot-circle-o'
+      uncheckedIcon='circle-o'
+    />
+    </View>
 
 
-    </View>);
+    <View style={styles.paymentContainer}>
+    <View style={styles.payment}>
+        <Icon style ={styles.icon} name= 'cc-amex' size={40} />
+        <Text style={styles.paymentText}>Amex</Text>
+    </View>
+    <CheckBox
+      checkedIcon='dot-circle-o'
+      uncheckedIcon='circle-o'
+    />
+    </View>
+
+    <View style={styles.paymentContainer}>
+    <View style={styles.payment}>
+        <Icon style ={styles.icon} name= 'apple-pay' size={40} />
+        <Text style={styles.paymentText}>Apple Pay</Text>
+    </View>
+    <CheckBox
+      checkedIcon='dot-circle-o'
+      uncheckedIcon='circle-o'
+    />
+    </View>
+
+  <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Payment')}>
+    <Text style={styles.buttonText}>Checkout</Text>
+  </TouchableOpacity>
+        
+  <TouchableOpacity style={styles.buttonGuest} onPress={()=>navigation.goBack()}>
+    <Text style={styles.buttonText}>Cancel</Text>
+  </TouchableOpacity>
+
+
+</View>);
+
 }
 
 const styles = StyleSheet.create({

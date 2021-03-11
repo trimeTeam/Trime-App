@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-end',
     marginTop: 30,
+    zIndex: 10
   },
   trainee: {
     width: 75,
