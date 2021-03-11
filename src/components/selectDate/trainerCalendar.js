@@ -64,7 +64,7 @@ export default class TrainerCalendar extends Component {
             textDayFontFamily: 'OpenSans-Regular',
             textMonthFontFamily: 'OpenSans-Bold',
             textDayHeaderFontFamily: 'OpenSans-Light',  
-              textDayFontSize: 18,
+              textDayFontSize: 16,
               textMonthFontSize: 26,
               textDayHeaderFontSize: 14,
             }}

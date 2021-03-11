@@ -8,7 +8,7 @@ export default function getStartedBtn(props) {
       <Pressable onPress={props.getStartedBtn}>
         <Image
           style={styles.button}
-          source={require('../../assets/start_button.gif')}
+          source={require('../../assets/Start_Button_yellow.gif')}
         ></Image>
       </Pressable>
     </View>
