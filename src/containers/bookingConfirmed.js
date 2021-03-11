@@ -40,7 +40,7 @@ const bookingConfirmed = ({navigation}) => {
 
       <Text style={styles.header}>Booking Confirmed</Text>
       <Text style={styles.greatJob}>
-        Great job Alexander!{'\n'}You are now ready to start your first{'\n'}
+        Great job Anna!{'\n'}You are now ready to start your first{'\n'}
         personal training session.
       </Text>
       <PrimaryButton textColor={'black'} bgColor={'#FDB339'} marginTop={60} btnHandler={goToStart}>

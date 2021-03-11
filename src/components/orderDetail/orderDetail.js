@@ -131,8 +131,9 @@ export default function orderDetail({ route, navigation }) {
 const styles = StyleSheet.create({
   mainContainer: {
     height: height,
-    width: width,
-    padding: 10
+    width: width,  
+    padding: 10,
+    backgroundColor: 'white'
   },
 
   containerFirst: {
