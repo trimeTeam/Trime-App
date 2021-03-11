@@ -126,7 +126,8 @@ const styles = StyleSheet.create({
   mainContainer:{
     height: height,
     width: width,  
-    padding: 10  
+    padding: 10,
+    backgroundColor: 'white'
   },
 
   containerFirst:{

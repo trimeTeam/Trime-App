@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 
 let customFonts = {
@@ -29,49 +30,67 @@ export default class TrainerCalendar extends Component {
   }
 
   datePickHandler = (day) => {
-    this.setState({ markedDates: { [day.dateString]: { selected: true, selectedColor: 'black' }}
+    this.setState({
+      markedDates: {
+        [day.dateString]: { selected: true, selectedColor: 'black' },
+      },
     });
   };
 
   render() {
-      return (
-        <View>
-          <Calendar
-            current={Date()}
-            minDate={Date()}
-            onDayPress={this.datePickHandler}
-            firstDay={1}
-            style={{
-              height: 350,
-            }}
-            markedDates={this.state.markedDates}
-            theme={{
-              backgroundColor: '#ffffff',
-              calendarBackground: '#ffffff',
-              textSectionTitleColor: '#b6c1cd',
-              textSectionTitleDisabledColor: '#d9e1e8',
-              selectedDayBackgroundColor: '#00adf5',
-              selectedDayTextColor: '#ffffff',
-              todayTextColor: '#000',
-              dayTextColor: '#000',
-              textDisabledColor: '#d9e1e8',
-              dotColor: '#000',
-              selectedDotColor: '#000',
-              arrowColor: '#000',
-              disabledArrowColor: '#d9e1e8',
-              monthTextColor: 'black',
-              indicatorColor: 'black',
+    return (
+      <View>
+        <Calendar
+          current={Date()}
+          minDate={Date()}
+          onDayPress={this.datePickHandler}
+          firstDay={1}
+          style={{
+            height: 350,
+          }}
+          markedDates={this.state.markedDates}
+          /*             renderArrow={(direction = "left") => (
+              <Icon name="chevron-left" size={25} color="black" />
+            )}
+            renderArrow={(direction = "right") => (
+              <Icon name="chevron-right" size={25} color="black" />
+            )}   */
+
+          renderArrow={(direction) => {
+            if (direction === 'right') {
+              return <Icon name="chevron-right" size={25} color="black" />;
+            }
+            if (direction === 'left') {
+              return <Icon name="chevron-left" size={25} color="black" />;
+            }
+                        
+          }}
+
+          theme={{
+            backgroundColor: '#ffffff',
+            calendarBackground: '#ffffff',
+            textSectionTitleColor: '#b6c1cd',
+            textSectionTitleDisabledColor: '#d9e1e8',
+            selectedDayBackgroundColor: '#00adf5',
+            selectedDayTextColor: '#ffffff',
+            todayTextColor: '#000',
+            dayTextColor: '#000',
+            textDisabledColor: '#d9e1e8',
+            dotColor: '#000',
+            selectedDotColor: '#000',
+            arrowColor: '#000',
+            disabledArrowColor: '#d9e1e8',
+            monthTextColor: 'black',
+            indicatorColor: 'black',
             textDayFontFamily: 'OpenSans-Regular',
             textMonthFontFamily: 'OpenSans-Bold',
-            textDayHeaderFontFamily: 'OpenSans-Light',  
-              textDayFontSize: 16,
-              textMonthFontSize: 26,
-              textDayHeaderFontSize: 14,
-            }}
-          ></Calendar>
-        </View>
-      );
+            textDayHeaderFontFamily: 'OpenSans-Light',
+            textDayFontSize: 16,
+            textMonthFontSize: 26,
+            textDayHeaderFontSize: 14,
+          }}
+        ></Calendar>
+      </View>
+    );
   }
 }
-
-
