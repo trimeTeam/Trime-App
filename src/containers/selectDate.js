@@ -7,11 +7,18 @@ export default class SelectDate extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      clickedDay : new Date().toISOString().slice(0, 10)
     };
   }
 
+  getClickedDate = (day) => {
+    this.setState({clickedDay: day.dateString})
+  };
+
+  
+
   btnHandlerSave = () => {
-    this.props.navigation.navigate('Select Time');
+    this.props.navigation.navigate('Select Time', {trainer: this.props.route.params.trainer, date: this.state.clickedDay});
   };
 
   btnHandlerCancel = () => {
@@ -27,7 +34,7 @@ export default class SelectDate extends Component {
           textAlign: 'center',
         }}
       >
-        <TrainerCalendar></TrainerCalendar>
+        <TrainerCalendar getClickedDate={this.getClickedDate}></TrainerCalendar>
         <PrimaryButton
           textColor={'black'}
           bgColor={'#FDB339'}
