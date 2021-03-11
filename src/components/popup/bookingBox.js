@@ -4,19 +4,25 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import ActivitiesBar from '../trainerPicker/activitiesBar'
 
+let customFonts = {
+  'OpenSans-Regular': require('../../assets/fonts/OpenSans-Regular.ttf'),
+  'OpenSans-SemiBold': require('../../assets/fonts/OpenSans-SemiBold.ttf'),
+  'OpenSans-Bold': require('../../assets/fonts/OpenSans-Bold.ttf'),
+};
+
 
 export default function BookingBox(props) {
 
   return (
     <View style={styles.bookingBox}>
-      <ActivitiesBar isActivityChecked={false}/>
+      <ActivitiesBar isActivityChecked={false} />
       <View style={styles.bookingInfo}>
         <View>
-            <Text style={styles.priceText}><Text style={styles.bold}>{props.trainer.costTo} SEK</Text> an hour</Text>
-            <View style={styles.rating}><Icon name='star' size={20} color='#FDB339'/><Text style={styles.bold}> {props.trainer.overallRating} </Text> <Text>({props.trainer.numberOfReviews})</Text></View>
+          <Text style={styles.priceText}><Text style={styles.bold}>{props.trainer.costTo} SEK</Text> an hour</Text>
+          <View style={styles.rating}><Icon name='star' size={20} color='#FDB339' /><Text style={styles.bold}> {props.trainer.overallRating} </Text> <Text style={styles.regular}>({props.trainer.numberOfReviews})</Text></View>
         </View>
         <TouchableOpacity style={styles.button} onPress={props.displaySelectDate}>
-            <Text style={styles.buttonText}>Book</Text>
+          <Text style={styles.buttonText}>Book</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -33,31 +39,35 @@ const styles = StyleSheet.create({
     width: '90%',
     position: 'absolute',
     bottom: 35,
-    zIndex:4
+    zIndex: 4
   },
   bookingInfo: {
-      marginTop: 5,
-      flexDirection: 'row',
-      justifyContent: 'space-between'
+    marginTop: 5,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   priceText: {
-      fontSize: 18
+    fontSize: 18,
+    fontFamily: 'OpenSans-Regular'
   },
   rating: {
-      flexDirection: 'row'
+    flexDirection: 'row',
   },
   button: {
-      backgroundColor: '#FDB339',
-      borderRadius: 100,
-      justifyContent: 'center',
-      alignContent: 'center',
-      paddingHorizontal: 40
+    backgroundColor: '#FDB339',
+    borderRadius: 100,
+    justifyContent: 'center',
+    alignContent: 'center',
+    paddingHorizontal: 40,
   },
   buttonText: {
-      fontSize: 18,
-      fontWeight:500
+    fontSize: 18,
+    fontFamily: 'OpenSans-SemiBold'
   },
   bold: {
-      fontWeight:700
+    fontFamily: 'OpenSans-Bold'
+  },
+  regular: {
+    fontFamily: 'OpenSans-Regular'
   }
 });

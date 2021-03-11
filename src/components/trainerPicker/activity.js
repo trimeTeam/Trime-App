@@ -2,6 +2,10 @@ import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text, Image } from 'react-native';
 
+let customFonts = {
+  'OpenSans-SemiBold': require('../../assets/fonts/OpenSans-SemiBold.ttf'),
+};
+
 export default function Activity(props) {
   const [isActivityChecked, setIsActivityChecked] = useState(props.isActivityChecked)
 
@@ -32,6 +36,7 @@ const styles = StyleSheet.create({
     height: 22,
   },
   text: {
-    fontWeight: 600
+    fontFamily: 'OpenSans-SemiBold',
+    marginTop: 4
   }
 });
