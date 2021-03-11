@@ -35,6 +35,7 @@ export default class TrainerCalendar extends Component {
         [day.dateString]: { selected: true, selectedColor: 'black' },
       },
     });
+    this.props.getClickedDate(day)
   };
 
   render() {

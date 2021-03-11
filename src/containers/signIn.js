@@ -11,7 +11,8 @@ let customFonts = {
 };
 
 
-export default function signIn({navigation}) {
+export default function signIn({route, navigation}) {
+
   return (
 <View>
     <View style={styles.introContainer}>
@@ -28,13 +29,13 @@ export default function signIn({navigation}) {
         <TextInput style={styles.textInput} placeholder='Select a Password'/>
       </View>
       
-      <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Order Detail')}>
+      <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Order Detail', {trainer: route.params.trainer, date: route.params.date, time: route.params.time})}>
         <Text style={styles.buttonText}>Create Account</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.buttonGuest}
-        onPress={() => navigation.navigate('Session Details')}
+        onPress={() => navigation.navigate('Session Details', {trainer: route.params.trainer, date: route.params.date, time: route.params.time})}
       >
         <Text style={styles.buttonText}>Continue as Guest</Text>
       </TouchableOpacity>
