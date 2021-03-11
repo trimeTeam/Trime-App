@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
     popup: {
         marginTop: 80,
         width: '100%',
-        paddingHorizontal: 20,
         paddingHorizontal: 10,
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,

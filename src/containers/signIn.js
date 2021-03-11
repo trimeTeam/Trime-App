@@ -5,6 +5,12 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const {width, height} = Dimensions.get('screen')
 
+let customFonts = {
+  'OpenSans-Regular': require('../assets/fonts/OpenSans-Regular.ttf'),
+  'OpenSans-SemiBold': require('../assets/fonts/OpenSans-SemiBold.ttf'),
+};
+
+
 export default function signIn({navigation}) {
   return (
 <View>
@@ -86,6 +92,7 @@ const styles = StyleSheet.create({
   introText: {
     fontSize: 14,
     alignSelf:'center',
+    fontFamily: 'OpenSans-Regular'
   },
 
   textInput: {
@@ -93,6 +100,7 @@ const styles = StyleSheet.create({
 alignSelf: 'stretch',
     borderBottomColor: 'gray', 
     borderBottomWidth: 2,
+    fontFamily: 'OpenSans-Regular'
   },
   input: {
     alignSelf: 'stretch'
@@ -104,6 +112,7 @@ alignSelf: 'stretch',
   seperatorText: {
     fontSize: 20,
     marginVertical: 30,
+    fontFamily: 'OpenSans-Regular'
   },
   button: {
     marginTop: 40,
@@ -120,6 +129,7 @@ alignSelf: 'stretch',
     color: 'black',
     margin:'auto',
     textAlign: 'center',
+    fontFamily: 'OpenSans-SemiBold'
   },
 
   buttonGuest: {
@@ -146,6 +156,7 @@ alignSelf: 'stretch',
     color: 'white',
     margin:'auto',
     textAlign: 'center',
+    fontFamily: 'OpenSans-SemiBold'
   },
 
   icon:{
