@@ -9,6 +9,8 @@ import BookingBox from '../components/popup/bookingBox'
 import TrainerPopupInfo from '../components/popup/trainerPopupInfo'
 
 
+
+
 export default function Popup({route, navigation}) {
 
     const trainer = route.params.trainer
@@ -44,7 +46,6 @@ const styles = StyleSheet.create({
     popup: {
         marginTop: 80,
         width: '100%',
-        paddingHorizontal: 20,
         paddingHorizontal: 10,
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,

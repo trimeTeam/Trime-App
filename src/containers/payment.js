@@ -7,9 +7,11 @@ const {width, height} = Dimensions.get('screen')
 
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-
-
-
+let customFonts = {
+    'OpenSans-Regular': require('../assets/fonts/OpenSans-Regular.ttf'),
+    'OpenSans-SemiBold': require('../assets/fonts/OpenSans-SemiBold.ttf'),
+    'OpenSans-Bold': require('../assets/fonts/OpenSans-Bold.ttf'),
+};
 
 export default function Payment({ navigation }) {
 
@@ -118,10 +120,11 @@ const styles = StyleSheet.create({
         padding: 20
     },
     bold: {
-        fontWeight: 600
+        fontFamily: 'OpenSans-Bold'
     },
     small: {
         fontSize: 11,
+        fontFamily: 'OpenSans-Regular'
     },
     cardNoInputContainer: {
         flexDirection: 'row',
@@ -130,7 +133,8 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1
     },
     cardNoInput: {
-        marginLeft: 15
+        marginLeft: 15,
+        fontFamily: 'OpenSans-Regular'
     },
     validationAndCVVContainer: {
         flexDirection: 'row',
@@ -143,13 +147,15 @@ const styles = StyleSheet.create({
         borderBottomColor: 'grey',
         borderBottomWidth: 1,
         maxWidth: 70,
-        marginRight: 10
+        marginRight: 10,
+        fontFamily: 'OpenSans-Regular'
     },
     nameInput: {
         paddingVertical: 10,
         borderBottomColor: 'grey',
         borderBottomWidth: 1,
-        marginBottom: 30
+        marginBottom: 30,
+        fontFamily: 'OpenSans-Regular'
     },
     saveCard: {
         backgroundColor: '#FFF',
@@ -158,11 +164,11 @@ const styles = StyleSheet.create({
         border: 'none',
     },
     saveCardText: {
-        fontWeight: 'normal'
+        fontFamily: 'OpenSans-Regular'
     },
     btnText: {
         fontSize: 18,
-        fontWeight: 600,
+        fontFamily: 'OpenSans-Bold',
         alignSelf: 'center'
     },
     payBtn: {

@@ -3,6 +3,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, TextInput } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+let customFonts = {
+  'OpenSans-Regular': require('../../assets/fonts/OpenSans-Regular.ttf'),
+};
+
 export default function SearchField(props) {
   const [searchInput, setSearchInput] = useState("")
 
@@ -34,10 +38,11 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     borderRadius: 20,
     overflow: 'hidden',
-    marginVertical: 30
+    marginVertical: 30,
   },
   input: {
     padding: 10,
     backgroundColor: '#FFF',
+    fontFamily: 'OpenSans-Regular'
   }
 });

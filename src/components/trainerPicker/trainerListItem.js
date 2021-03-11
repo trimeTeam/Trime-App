@@ -3,6 +3,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
+let customFonts = {
+  'OpenSans-Regular': require('../../assets/fonts/OpenSans-Regular.ttf'),
+  'OpenSans-Bold': require('../../assets/fonts/OpenSans-Bold.ttf'),
+};
 
 export default function TrainerListItem(props) {
  
@@ -12,7 +16,7 @@ export default function TrainerListItem(props) {
         <StatusBar style="auto" />
         <Image style={styles.profileImg} source={{uri: props.trainer.profileImg}}/>
         <View style={styles.textContainer}>
-            <Text style={styles.bold}>{props.trainer.name}</Text>
+            <Text style={styles.name}>{props.trainer.name}</Text>
             <View style={styles.activitiesContainer}>
               {props.trainer.typeOfTraining.map((activity) => {
                 return (
@@ -22,9 +26,9 @@ export default function TrainerListItem(props) {
                 )
               })}
             </View>
-            <Text><Icon name='timer' size={25}/>{props.trainer.durationFrom} - {props.trainer.durationTo} min</Text>
+            <Text style={styles.regularFont}><Icon name='timer' size={22}/> {props.trainer.durationFrom} - {props.trainer.durationTo} min</Text>
             <View style={styles.detailsContainer}>
-                <Text><Icon name={props.trainer.location == 'Remote'? 'mobile-screen-share':'location-on'} size={25}/>{props.trainer.location}</Text>
+                <Text style={styles.regularFont}><Icon name={props.trainer.location == 'Remote'? 'mobile-screen-share':'location-on'} size={22}/> {props.trainer.location}</Text>
                 <Text style={styles.pricePill}>From <Text style={styles.bold}>{props.trainer.costFrom} SEK</Text></Text>
             </View>
         </View>
@@ -51,7 +55,14 @@ const styles = StyleSheet.create({
     flex:1
   },
   bold: {
-    fontWeight: 700
+    fontFamily: 'OpenSans-Bold'
+  },
+  regularFont: {
+    fontFamily: 'OpenSans-Regular', 
+  },
+  name: {
+    fontFamily: 'OpenSans-Bold',
+    fontSize: 16
   },
   activitiesContainer: {
     flexDirection: 'row',
@@ -80,7 +91,8 @@ const styles = StyleSheet.create({
     paddingBottom: 3,
     paddingLeft: 9,
     paddingRight: 9,
-    borderRadius: 100
+    borderRadius: 100,
+    fontFamily: 'OpenSans-Regular'
   },
   rightIcon: {
     alignSelf: 'center'

@@ -12,8 +12,6 @@ import ActivitiesBar from '../components/trainerPicker/activitiesBar'
 import TrainerList from '../components/trainerPicker/trainerList'
 
 
-
-
 export default function TrainerPicker({navigation}) {
 
   function displayTrainerPopup(trainerObject) {
