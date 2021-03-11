@@ -29,7 +29,7 @@ const bookingConfirmed = ({navigation}) => {
       <StatusBar style="auto" />
       <View style={styles.imageContainer}>
         <Image
-          source={require('../assets/high5.png')}
+          source={require('../assets/high5_2.gif')}
           style={styles.high5}
         ></Image>
         <Image
