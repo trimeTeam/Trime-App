@@ -17,7 +17,13 @@ let customFonts = {
   'OpenSans-Bold': require('../assets/fonts/OpenSans-Bold.ttf'),
 };
 
-const bookingConfirmed = (props) => {
+
+const bookingConfirmed = ({navigation}) => {
+
+  const goToStart = () => {
+    navigation.navigate('Get Started');
+  }
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -37,10 +43,10 @@ const bookingConfirmed = (props) => {
         Great job Alexander!{'\n'}You are now ready to start your first{'\n'}
         personal training session.
       </Text>
-      <PrimaryButton textColor={'black'} bgColor={'#FDB339'} marginTop={60}>
+      <PrimaryButton textColor={'black'} bgColor={'#FDB339'} marginTop={60} btnHandler={goToStart}>
         Get started!
       </PrimaryButton>
-      <PrimaryButton textColor={'black'} bgColor={'#F6F6F6'} marginTop={20}>
+      <PrimaryButton textColor={'black'} bgColor={'#F6F6F6'} marginTop={20} btnHandler={goToStart}>
         Home
       </PrimaryButton>
       <Text style={styles.confirmation}>
