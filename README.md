@@ -4,9 +4,13 @@ Brief 8 - Hyper Island - Code and Collaborate module
 
 ### :busts_in_silhouette: Team: 
 [Elin Nordin](https://github.com/elinordin) (FED)
+
 [Anna Roos](https://github.com/AnnaRoos) (FED)
+
 [Rafe Nasir](https://github.com/rafenasir) (FED)
+
 Alexander Haaland (UX)
+
 Benjamin Gabernig (UX)
 
 
