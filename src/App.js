@@ -40,7 +40,7 @@ export default function App() {
     });
 
     if (!fontsLoaded) {
-      return 'Font not found';
+      return null;
     }
   
   
@@ -60,7 +60,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-{/*         <Stack.Screen
+        <Stack.Screen
           options={{ headerShown: false }}
           name="Get Started"
           component={GetStarted}
@@ -79,7 +79,7 @@ export default function App() {
           options={{ headerShown: false }}
           name="Filter"
           component={Filter}
-        /> */}
+        /> 
         <Stack.Screen
           name="Select Date"
           component={SelectDate}

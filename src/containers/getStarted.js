@@ -22,7 +22,7 @@ export default class GetStarted extends Component {
         let that = this;  
         setTimeout(function(){  
             that.hideSplashScreen();  
-        }, 3000);  
+        }, 2900);  
     }  
     
     goToTrainerPicker = () => {
