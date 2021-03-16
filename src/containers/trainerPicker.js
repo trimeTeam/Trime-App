@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, ImageBackground, Dimensions, SafeAreaView } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
-import mapImg from '../assets/map.PNG'
+// import mapImg from '../assets/map.png'
 const {width, height} = Dimensions.get('screen')
 
 import SliderContainer from '../components/atoms/sliderContainer'
@@ -24,7 +24,7 @@ export default function TrainerPicker({navigation}) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ImageBackground style={styles.map} source={{uri: mapImg}}>                      
+      <ImageBackground style={styles.map} source={require('../assets/map.png')}>                   
         
         <SearchField displayFilters={displayFilters}/>
         <SliderContainer>

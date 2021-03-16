@@ -133,7 +133,13 @@ const styles = StyleSheet.create({
     filterContentContainer: {
         paddingVertical: 20,
         paddingHorizontal: 30,
-        boxShadow: '0px 3px 5px 1px rgba(0, 0, 0, 0.15)',
+        shadowColor: 'rgba(0, 0, 0, 0.15)',
+        shadowOffset: {
+            width: 3,
+            height: 5
+
+        }
+        // boxShadow: '0px 3px 5px 1px rgba(0, 0, 0, 0.15)',
     },
     heading: {
         fontSize: 42,

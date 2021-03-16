@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF',
         paddingHorizontal: 0,
         margin: 0,
-        border: 'none',
+        // border: 'none',
     },
     saveCardText: {
         fontFamily: 'OpenSans-Regular'

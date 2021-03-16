@@ -4,7 +4,7 @@ import { SafeAreaView, StyleSheet, View, ScrollView, ImageBackground, Dimensions
 const {width, height} = Dimensions.get('screen')
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-import mapImg from '../assets/map.PNG'
+import mapImg from '../assets/map.png'
 import BookingBox from '../components/popup/bookingBox'
 import TrainerPopupInfo from '../components/popup/trainerPopupInfo'
 

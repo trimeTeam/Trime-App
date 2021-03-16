@@ -32,7 +32,13 @@ export default function BookingBox(props) {
 const styles = StyleSheet.create({
   bookingBox: {
     backgroundColor: '#FFF',
-    boxShadow: '0px 3px 4px 3px rgba(0, 0, 0, 0.25)',
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: {
+      width: 3,
+      height: 5
+
+  },
+    // boxShadow: '0px 3px 4px 3px rgba(0, 0, 0, 0.25)',
     padding: 15,
     borderRadius: 10,
     alignSelf: 'center',

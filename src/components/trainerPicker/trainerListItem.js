@@ -18,9 +18,9 @@ export default function TrainerListItem(props) {
         <View style={styles.textContainer}>
             <Text style={styles.name}>{props.trainer.name}</Text>
             <View style={styles.activitiesContainer}>
-              {props.trainer.typeOfTraining.map((activity) => {
+              {props.trainer.typeOfTraining.map((activity, index) => {
                 return (
-                  <View style={styles.iconContainer}>
+                  <View key={index} style={styles.iconContainer}>
                     <Image style={styles.icon} source={activity.icon} />
                   </View>
                 )
