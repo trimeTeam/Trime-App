@@ -1,60 +1,56 @@
-import 'react-native-gesture-handler';
-import React from 'react';
+import "react-native-gesture-handler";
+import React from "react";
 
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
+import Popup from "./containers/popup";
+import Filter from "./containers/filter";
 
-import Popup from './containers/popup';
-import Filter from './containers/filter';
+import TrainerPicker from "./containers/trainerPicker";
+import SignIn from "./containers/signIn";
+import Payment from "./containers/payment";
+import GetStarted from "./containers/getStarted";
+import SelectDate from "./containers/selectDate";
+import SelectTime from "./containers/selectTime";
+import BookingConfirmed from "./containers/bookingConfirmed";
 
-import TrainerPicker from './containers/trainerPicker';
-import SignIn from './containers/signIn';
-import Payment from './containers/payment';
-import GetStarted from './containers/getStarted';
-import SelectDate from './containers/selectDate';
-import SelectTime from './containers/selectTime';
-import BookingConfirmed from './containers/bookingConfirmed';
-
-import { useFonts } from '@expo-google-fonts/open-sans';
+import { useFonts } from "@expo-google-fonts/open-sans";
 
 let customFonts = {
-  'OpenSans-Bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+  "OpenSans-Bold": require("./assets/fonts/OpenSans-Bold.ttf"),
 };
-import OrderDetail from './components/orderDetail/orderDetail';
-
-
+import OrderDetail from "./components/orderDetail/orderDetail";
 
 const Stack = createStackNavigator();
 
 export default function App() {
-    let [fontsLoaded] = useFonts({
-      'OpenSans-Bold': require('./assets/fonts/OpenSans-Bold.ttf'),
-      'OpenSans-ExtraBold': require('./assets/fonts/OpenSans-ExtraBold.ttf'),
-      'OpenSans-Regular': require('./assets/fonts/OpenSans-Regular.ttf'),
-      'OpenSans-SemiBold': require('./assets/fonts/OpenSans-SemiBold.ttf'),
-      'OpenSans-Light': require('./assets/fonts/OpenSans-Light.ttf'),
-    });
+  let [fontsLoaded] = useFonts({
+    "OpenSans-Bold": require("./assets/fonts/OpenSans-Bold.ttf"),
+    "OpenSans-ExtraBold": require("./assets/fonts/OpenSans-ExtraBold.ttf"),
+    "OpenSans-Regular": require("./assets/fonts/OpenSans-Regular.ttf"),
+    "OpenSans-SemiBold": require("./assets/fonts/OpenSans-SemiBold.ttf"),
+    "OpenSans-Light": require("./assets/fonts/OpenSans-Light.ttf"),
+  });
 
-    if (!fontsLoaded) {
-      return 'Font not found';
-    }
-  
-  
+  if (!fontsLoaded) {
+    return "Font not found";
+  }
+
   const yellowHeader = {
     headerStyle: {
-      backgroundColor: '#FDB339',
+      backgroundColor: "#FDB339",
       height: 128,
     },
     headerTitleStyle: {
-      fontFamily: 'OpenSans-Bold',
+      fontFamily: "OpenSans-Bold",
       fontSize: 18,
       marginTop: 50,
     },
-    headerTitleAlign: 'center',
+    headerTitleAlign: "center",
   };
 
   return (
@@ -102,40 +98,25 @@ export default function App() {
           component={Payment}
           options={yellowHeader}
         />
-        <Stack.Screen 
-              name="Sign In" 
-              component={SignIn} 
-              options={{
-                title: 'Sign In',
-                headerStyle: {
-                  backgroundColor: '#FDB339',
-                  height: 128,
-                },
-                headerTitleStyle: {
-                  fontFamily: 'OpenSans-Bold',
-                  fontSize: 18,
-                  marginTop: 50,
-                },
-                headerTitleAlign: 'center',
-              }} />
-        <Stack.Screen 
-          name="Order Detail" 
+
+        <Stack.Screen
+          name="Order Detail"
           component={OrderDetail}
           options={{
-            title: 'Order Detail',
+            title: "Order Detail",
             headerStyle: {
-              backgroundColor: '#FDB339',
+              backgroundColor: "#FDB339",
               height: 128,
             },
             headerTitleStyle: {
-              fontFamily: 'OpenSans-Bold',
+              fontFamily: "OpenSans-Bold",
               fontSize: 18,
               marginTop: 50,
             },
-            headerTitleAlign: 'center',
+            headerTitleAlign: "center",
           }}
-       />
-        <Stack.Screen name="Payment" component={Payment} />
+        />
+
         <Stack.Screen
           name="Booking Confirmed"
           component={BookingConfirmed}
@@ -149,8 +130,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
