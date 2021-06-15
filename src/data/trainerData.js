@@ -3,10 +3,16 @@ import BoxingIcon from '../assets/Boxing.png'
 import GymIcon from '../assets/Gym.png'
 import RunningIcon from '../assets/Running.png'
 
+import pawel from '../assets/trainerImages/pawel.jpg'
+import tommy from '../assets/trainerImages/tommy.jpg'
+import sofia from '../assets/trainerImages/sofia.jpg'
+import jari from '../assets/trainerImages/jari.jpg'
+import magnus from '../assets/trainerImages/magnus.jpg'
+
 const trainers = [
     {
         key: "1",
-        profileImg: "https://diambra.se/content/uploads/IMG_2974.jpg",
+        profileImg: pawel,
         name: "Pawel Krupa",
         durationFrom: "30",
         durationTo: "60",
@@ -60,7 +66,7 @@ const trainers = [
     },
     {
         key: "2",
-        profileImg: "https://images.squarespace-cdn.com/content/v1/57d6f49bc534a50658082759/1502998599718-B8WHN221J5241WFEJYWQ/ke17ZwdGBToddI8pDm48kDsmujvCxGgFgBWj31Y2d6R7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmmbLecD_NwfjqNxjfNDWHyATeL23bceyBtuX4nDs5VF5LtFSR0qFcA7plit5Vqms8/Tommy_5385.jpg?format=1500w",
+        profileImg: tommy,
         name: "Tommy Ludvigsson",
         durationFrom: "50",
         durationTo: "90",
@@ -114,7 +120,7 @@ const trainers = [
     },
     {
         key: "3",
-        profileImg: "https://media.bonnierforlagen.se/forfattarfotonstandard/g/44089g.jpg?timestamp=20160307042529",
+        profileImg: sofia,
         name: "Sofia Ståhl",
         durationFrom: "30",
         durationTo: "60",
@@ -168,7 +174,7 @@ const trainers = [
     },
     {
         key: "4",
-        profileImg: "http://jariketola.se/wp-content/themes/jariketola/includes/images/coach_jari_ketola.png",
+        profileImg: jari,
         name: "Jari Ketola",
         durationFrom: "30",
         durationTo: "60",
@@ -222,7 +228,7 @@ const trainers = [
     },
     {
         key: "5",
-        profileImg: "https://resources.mynewsdesk.com/image/upload/c_fill,dpr_auto,f_auto,g_auto,q_auto,w_864/57isz9bufbdssfl5nialw.jpg",
+        profileImg: magnus,
         name: "Magnus Samuelsson",
         durationFrom: "30",
         durationTo: "60",
@@ -276,7 +282,7 @@ const trainers = [
     },
     {
         key: "6",
-        profileImg: "https://diambra.se/content/uploads/IMG_2974.jpg",
+        profileImg: pawel,
         name: "Pawel Krupa",
         durationFrom: "30",
         durationTo: "60",
@@ -330,7 +336,7 @@ const trainers = [
     },
     {
         key: "7",
-        profileImg: "https://images.squarespace-cdn.com/content/v1/57d6f49bc534a50658082759/1502998599718-B8WHN221J5241WFEJYWQ/ke17ZwdGBToddI8pDm48kDsmujvCxGgFgBWj31Y2d6R7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmmbLecD_NwfjqNxjfNDWHyATeL23bceyBtuX4nDs5VF5LtFSR0qFcA7plit5Vqms8/Tommy_5385.jpg?format=1500w",
+        profileImg: tommy,
         name: "Tommy Ludvigsson",
         durationFrom: "50",
         durationTo: "90",
@@ -384,7 +390,7 @@ const trainers = [
     },
     {
         key: "8",
-        profileImg: "https://media.bonnierforlagen.se/forfattarfotonstandard/g/44089g.jpg?timestamp=20160307042529",
+        profileImg: sofia,
         name: "Sofia Ståhl",
         durationFrom: "30",
         durationTo: "60",
@@ -438,7 +444,7 @@ const trainers = [
     },
     {
         key: "9",
-        profileImg: "http://jariketola.se/wp-content/themes/jariketola/includes/images/coach_jari_ketola.png",
+        profileImg: jari,
         name: "Jari Ketola",
         durationFrom: "30",
         durationTo: "60",
@@ -492,7 +498,7 @@ const trainers = [
     },
     {
         key: "10",
-        profileImg: "https://resources.mynewsdesk.com/image/upload/c_fill,dpr_auto,f_auto,g_auto,q_auto,w_864/57isz9bufbdssfl5nialw.jpg",
+        profileImg: magnus,
         name: "Magnus Samuelsson",
         durationFrom: "30",
         durationTo: "60",
