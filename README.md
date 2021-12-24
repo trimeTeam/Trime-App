@@ -32,7 +32,7 @@ We decided to re-create the onboarding process for Trime to apply user flows sim
 
 ### :closed_book: Learnings:
 
-* SCRUM-framework
+* SCRUM framework
 * Basic level React Native
 * Deeper insights in React.js
 
