@@ -1,5 +1,5 @@
 # Trime-App
-Brief 8 - Hyper Island - Code and Collaborate module
+A Hyper Island school project - Code and Collaborate module
 
 
 ### :busts_in_silhouette: Team: 
