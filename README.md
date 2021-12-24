@@ -27,7 +27,7 @@ Learn more about SCRUM and agile methods, learn how to work in a team with devel
 
 
 ### :heavy_check_mark: Solution:
-We decided to re-create the onboarding process for trime to apply userflows similar to best practices in for example ecommerce. We therefore wanted the user to be able to see the app and booking-process without having to sign up before. The development-team then created the prototype using React Native (a completely new field for us).
+We decided to re-create the onboarding process for Trime to apply user flows similar to best practices in for example ecommerce. We therefore wanted the user to be able to see the app and booking-process without having to sign up before. The development team then created the prototype using React Native (a completely new field for us).
 
 
 ### :closed_book: Learnings:
